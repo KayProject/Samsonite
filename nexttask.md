@@ -1,5 +1,14 @@
 # Next Tasks
 
+## Current Status
+
+- ✅ `nexttask.md` created and pushed to `kayproject/main`.
+- ✅ Recent rebrand commits were rewritten to `kayproject` for the top two commits.
+- ✅ `kayproject` remote is configured over SSH.
+- ⚠️ The latest `nexttask.md` commit itself is currently authored by `jadonamite`; I can rewrite that if you want.
+
+## Remaining Work
+
 1. Cleanup remaining Automata text references
    - Search the repo for `Automata`/`automata`, update remaining textual occurrences, and commit.
 
