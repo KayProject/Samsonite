@@ -1,13 +1,13 @@
-You are building the complete frontend for AUTOMATA — a cross-chain 
+You are building the complete frontend for SAMSONITE — a cross-chain 
 AI agent platform. Build all 5 pages listed below. Use every detail 
 in this prompt exactly as written. Do not invent features, copy, or 
 sections not listed here.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WHAT AUTOMATA IS
+WHAT SAMSONITE IS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Automata is a cross-chain AI agent platform. Users send, swap, 
+Samsonite is a cross-chain AI agent platform. Users send, swap, 
 bridge, and stake tokens across Base, Celo, Ethereum, and Stellar 
 by typing a plain English message or dragging nodes on a canvas. 
 The AI agent (Gemini) handles routing, fees, and execution. The 
@@ -79,7 +79,7 @@ PAGE 1 — LANDING PAGE  /
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 NAVIGATION:
-  Left: wordmark "AUTOMATA" in Syne bold, white
+  Left: wordmark "SAMSONITE" in Syne bold, white
   Center: How it works · Chains · Models
   Right: [ Launch App ] — sharp bordered button, accent-pink on hover
   Style: glassmorphism, sticky, border-bottom rgba(255,255,255,0.06)
@@ -115,7 +115,7 @@ TEXT below the orb:
     Line 1: "One message."
     Line 2: "Every chain."
   Subtext (IBM Plex Mono, muted, 16px max-width 480px centered):
-    "Type what you want. Automata finds the route, estimates fees, 
+    "Type what you want. Samsonite finds the route, estimates fees, 
     and moves your assets — across Base, Celo, Ethereum, and Stellar."
   
   Two CTA buttons (side by side):
@@ -134,7 +134,7 @@ SPLIT MOCKUP — this is the centerpiece of this section:
   like real product screens, not illustrations.
 
   LEFT MOCKUP — CHAT INTERFACE:
-    Title bar: "AUTOMATA — Chat" in monospace
+    Title bar: "SAMSONITE — Chat" in monospace
     Background #1A1A2E, rounded corners, faint pink glow border
     Show a real conversation thread (3 messages):
       User message (right-aligned, pink bubble):
@@ -152,7 +152,7 @@ SPLIT MOCKUP — this is the centerpiece of this section:
     Input bar at bottom with placeholder "Type a command..."
 
   RIGHT MOCKUP — FLOW BUILDER:
-    Title bar: "AUTOMATA — Flow Builder" in monospace
+    Title bar: "SAMSONITE — Flow Builder" in monospace
     Background #1A1A2E, rounded corners, faint purple glow border
     Show 3 connected nodes left-to-right with flowing connector lines:
       Node 1: "BRIDGE" — top border accent-purple
@@ -197,7 +197,7 @@ Headline (Syne): "Everything your money needs."
 
 Section label: "03 —— INTELLIGENCE" (monospace, muted)
 Headline (Syne): "Bring your own brain."
-Subtext: "Automata works with your own API key. Choose the model 
+Subtext: "Samsonite works with your own API key. Choose the model 
 you trust."
 
 3 cards in a row:
@@ -247,13 +247,13 @@ Full-width dark panel, large centered:
   Your agent.  
   Every chain."
   
-  Button: [ Launch Automata ] (large, filled accent-pink, sharp)
+  Button: [ Launch Samsonite ] (large, filled accent-pink, sharp)
   
   Below button (muted small): 
     "Testnet · Phase 1 · Base · Celo · Ethereum · Stellar"
 
 FOOTER:
-  "AUTOMATA" wordmark left
+  "SAMSONITE" wordmark left
   Status: "v1.0 · Testnet"
   Right: GitHub · Docs · Twitter
 
@@ -264,7 +264,7 @@ PAGE 2 — CHAT INTERFACE  /chat
 Full-screen app layout. No landing page nav. App nav instead.
 
 LEFT SIDEBAR (280px, #1A1A2E, full height):
-  Top: "AUTOMATA" wordmark + version badge "v1.0"
+  Top: "SAMSONITE" wordmark + version badge "v1.0"
   Wallet section:
     Label: "CONNECTED WALLET" (monospace, muted, tiny)
     Address: "0x1a2b...3c4d" (IBM Plex Mono, white, truncated)

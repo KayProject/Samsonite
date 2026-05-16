@@ -28,7 +28,7 @@ export async function executeTool(
         
         const handler = new X402PaymentHandler();
         // Pointing straight to your production Railway server
-        const url = 'https://automata-x402-production.up.railway.app/api/yield'; 
+        const url = 'https://samsonite-x402-production.up.railway.app/api/yield'; 
         
         try {
             // The handler catches the 402, pays 0.001 USDC, and retries!

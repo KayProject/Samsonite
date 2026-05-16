@@ -1,4 +1,4 @@
-# AUTOMATA — PROGRESS.md
+# SAMSONITE — PROGRESS.md
 ### Version 2.0 | Cross-Chain AI Agent Platform
 
 > **This is the single source of truth for the entire project.**
@@ -34,7 +34,7 @@ Next: Replace bridgeService.ts stub with real Circle CCTP V2 SDK calls.
 ## ✅ COMPLETED PHASES
 
 ### PHASE 0 — ACCOUNTS & INFRASTRUCTURE
-- [x] GitHub repository initialized (Automata-V2). 
+- [x] GitHub repository initialized (Samsonite-V2). 
 - [x] Google AI Studio key obtained (Gemini 2.5 Flash). 
 - [x] PostgreSQL installed and running (Postgres 16). 
 - [x] P1000 Auth error fixed (md5 configuration applied). 
@@ -62,11 +62,11 @@ Next: Replace bridgeService.ts stub with real Circle CCTP V2 SDK calls.
 
 ---
 
-You are continuing development on Automata — a cross-chain AI agent platform.
+You are continuing development on Samsonite — a cross-chain AI agent platform.
 Read PROGRESS.md first, then this entire prompt before writing any code.
 
-PROGRESS.md location: /Automata-V2/PROGRESS.md
-Architecture doc: /Automata-V2/AutomataArchitecture_v2.docx
+PROGRESS.md location: /Samsonite-V2/PROGRESS.md
+Architecture doc: /Samsonite-V2/SamsoniteArchitecture_v2.docx
 
 --- WHAT WAS COMPLETED THIS SESSION (Dev 1) ---
 
@@ -129,9 +129,9 @@ backend/src/index.ts              — Express server, /api/chat route
 
 ---
 
-## 🧠 WHAT IS AUTOMATA — NEVER SKIP THIS SECTION
+## 🧠 WHAT IS SAMSONITE — NEVER SKIP THIS SECTION
 
-Automata is a **cross-chain AI agent platform**. It lets any user — from a first-time crypto holder to a DeFi power user — **swap, bridge, and stake** across multiple blockchains through either a **chat interface** (type what you want in plain English) or a **visual flow builder** (drag and drop actions onto a canvas).
+Samsonite is a **cross-chain AI agent platform**. It lets any user — from a first-time crypto holder to a DeFi power user — **swap, bridge, and stake** across multiple blockchains through either a **chat interface** (type what you want in plain English) or a **visual flow builder** (drag and drop actions onto a canvas).
 
 The AI agent (powered by Google Gemini Flash) handles all the complexity: finding the best route, estimating fees, sequencing the steps, and executing transactions. The user just confirms and signs.
 
@@ -152,7 +152,7 @@ The AI agent (powered by Google Gemini Flash) handles all the complexity: findin
 - **Assisted** — agent proposes a plan, user reviews and approves before anything happens
 - **Autonomous** — agent executes the full flow, notifies user when done
 
-**The user always signs their own transactions. Automata never holds or controls funds.**
+**The user always signs their own transactions. Samsonite never holds or controls funds.**
 
 ---
 
@@ -269,7 +269,7 @@ Both devs push to the same GitHub repo and both update this file after every com
 | EVM interaction | viem + wagmi | Modern standard. Type-safe. Faster than ethers.js. | Project start |
 | Phase 1 chains | Base, Celo, ETH, Stellar | All have native USDC via CCTP V2. Stellar adds African payment corridor (MoneyGram offramp). | Project start |
 | Monetisation | None yet (Phase 2) | Build the product first. Future: Circle Bridge Kit revenue module + x402 micropayments. | Project start |
-| Flow execution | User always signs | Automata never holds funds. Agent builds unsigned txs, user signs via Privy. | Project start |
+| Flow execution | User always signs | Samsonite never holds funds. Agent builds unsigned txs, user signs via Privy. | Project start |
 | Language | Plain English only | No blockchain jargon in the UI. Never say "gas", "bridge", "sign a transaction". | Project start |
 
 ---
@@ -280,7 +280,7 @@ Both devs push to the same GitHub repo and both update this file after every com
 # ── BACKEND (backend/.env) ──────────────────────────────────────
 PORT=3001
 NODE_ENV=development
-DATABASE_URL=postgresql://user:password@localhost:5432/automata
+DATABASE_URL=postgresql://user:password@localhost:5432/samsonite
 ENCRYPTION_SECRET=                    # 32-char random string for encrypting user API keys
 
 # RPC endpoints (get free ones from Alchemy or Infura)
@@ -353,10 +353,10 @@ Next sync checkpoint: End of Phase 1
 These are free. Do them all now.
 
 - [ ] **GitHub** — https://github.com/signup
-  - Create a new repository called `automata`
+  - Create a new repository called `samsonite`
   - Set it to private for now
   - Add both devs as collaborators (Settings → Collaborators)
-  - Clone the repo to both machines: `git clone https://github.com/YOUR_USERNAME/automata.git`
+  - Clone the repo to both machines: `git clone https://github.com/YOUR_USERNAME/samsonite.git`
 
 - [ ] **Google AI Studio (Gemini API)** — https://aistudio.google.com
   - Sign in with Google
@@ -367,7 +367,7 @@ These are free. Do them all now.
 
 - [ ] **Privy** — https://privy.io
   - Click "Get started"
-  - Create a new app called "Automata"
+  - Create a new app called "Samsonite"
   - Copy your **App ID** from the dashboard
   - In settings, enable: Email login, Google login, MetaMask, WalletConnect
   - Under "Embedded Wallets", enable: Create on login, Support EVM chains, Support Stellar
@@ -431,7 +431,7 @@ Run each command. If something fails, Google the error — most are easy fixes.
   - Windows: Download the installer from the website
   - Linux: `sudo apt install postgresql postgresql-contrib`
   - Verify: `psql --version`
-  - Create the database: `createdb automata`
+  - Create the database: `createdb samsonite`
 
 - [ ] **MetaMask browser extension** — https://metamask.io
   - Install on Chrome or Brave
@@ -510,7 +510,7 @@ Before moving to Phase 1, confirm all of these:
 
 ### Step 1.1 — Create the monorepo root structure
 
-Every command below is run from the root `automata/` folder (the one you cloned from GitHub).
+Every command below is run from the root `samsonite/` folder (the one you cloned from GitHub).
 
 - [ ] Create the root `package.json` by running:
   ```bash
@@ -520,7 +520,7 @@ Every command below is run from the root `automata/` folder (the one you cloned 
 - [ ] Open the newly created `package.json` and replace its entire content with:
   ```json
   {
-    "name": "automata",
+    "name": "samsonite",
     "version": "1.0.0",
     "private": true,
     "workspaces": ["frontend", "backend", "shared"],
@@ -650,7 +650,7 @@ All commands in this step are run from the `backend/` folder: `cd backend`
   });
 
   app.listen(PORT, () => {
-    console.log(`Automata backend running on port ${PORT}`);
+    console.log(`Samsonite backend running on port ${PORT}`);
   });
   ```
 
@@ -741,9 +741,9 @@ Run all commands from the `backend/` folder.
   }
   ```
 
-- [ ] Make sure your `DATABASE_URL` in `.env` is correct. If you ran `createdb automata` earlier, the URL is:
+- [ ] Make sure your `DATABASE_URL` in `.env` is correct. If you ran `createdb samsonite` earlier, the URL is:
   ```
-  DATABASE_URL=postgresql://YOUR_MAC_USERNAME@localhost:5432/automata
+  DATABASE_URL=postgresql://YOUR_MAC_USERNAME@localhost:5432/samsonite
   ```
   On Mac, your username is what you see in Terminal before the `$`. On Linux/Windows, adjust accordingly.
 
@@ -850,7 +850,7 @@ DONE WHEN: shared/types/Action.ts exists and exports all types without TypeScrip
 
 ### Step 1.5 — Create the Next.js frontend
 
-Run from the `automata/` root folder.
+Run from the `samsonite/` root folder.
 
 - [ ] Create the Next.js app:
   ```bash
@@ -892,12 +892,12 @@ Run from the `automata/` root folder.
 
 - [ ] Create `frontend/.env.local` — copy from the Environment Variables section above and fill in your Privy App ID.
 
-- [ ] Open `frontend/app/globals.css`. Find the `:root` section and add the Automata design tokens INSIDE the `:root` block (after the existing variables):
+- [ ] Open `frontend/app/globals.css`. Find the `:root` section and add the Samsonite design tokens INSIDE the `:root` block (after the existing variables):
   ```css
   :root {
     /* existing shadcn variables stay here */
 
-    /* Automata design tokens */
+    /* Samsonite design tokens */
     --bg-primary: #0F0F1A;
     --bg-secondary: #1A1A2E;
     --bg-card: #16213E;
@@ -926,7 +926,7 @@ Run from the `automata/` root folder.
   export default function HomePage() {
     return (
       <main style={{ padding: '2rem', color: 'white' }}>
-        <h1>Automata</h1>
+        <h1>Samsonite</h1>
         <p>Cross-Chain AI Agent Platform — coming soon</p>
       </main>
     );
@@ -937,7 +937,7 @@ Run from the `automata/` root folder.
   ```bash
   npm run dev
   ```
-  Open http://localhost:3000 — you should see "Automata" on a dark background. Zero console errors.
+  Open http://localhost:3000 — you should see "Samsonite" on a dark background. Zero console errors.
 
 - [ ] Commit:
   ```bash
@@ -947,7 +947,7 @@ Run from the `automata/` root folder.
   ```
 
 ```
-DONE WHEN: localhost:3000 shows "Automata" on a dark background. Zero console errors in browser devtools.
+DONE WHEN: localhost:3000 shows "Samsonite" on a dark background. Zero console errors in browser devtools.
 ```
 
 ---
@@ -997,7 +997,7 @@ This wraps your entire app so every page has access to wallet functionality.
   import { Providers } from './providers';
 
   export const metadata: Metadata = {
-    title: 'Automata — Cross-Chain AI Agent',
+    title: 'Samsonite — Cross-Chain AI Agent',
     description: 'Swap, bridge, and stake across any chain. In plain English.',
   };
 
@@ -1078,7 +1078,7 @@ This is the most important file in the backend. It defines what the agent is, wh
 - [ ] Create `backend/src/agent/prompts.ts`:
   ```typescript
   export const SYSTEM_PROMPT = `
-  You are the Automata agent — an AI assistant that helps users move, swap, and grow their money across multiple blockchains.
+  You are the Samsonite agent — an AI assistant that helps users move, swap, and grow their money across multiple blockchains.
 
   ## YOUR PERSONALITY
   - You speak plain English. Never use blockchain jargon.
@@ -1857,7 +1857,7 @@ DONE WHEN: All 8 service files created. Run npx tsc --noEmit from backend/ — z
   app.use('/agent', agentRouter);
 
   app.listen(PORT, () => {
-    console.log(`Automata backend running on port ${PORT}`);
+    console.log(`Samsonite backend running on port ${PORT}`);
   });
   ```
 
@@ -1906,7 +1906,7 @@ DONE WHEN: POST /agent/execute with a test message returns a real response from 
 
 ### Step 3.1 — Design system & global layout
 
-- [ ] Run UI/UX Pro Max to generate the Automata design system. In your Claude Code environment:
+- [ ] Run UI/UX Pro Max to generate the Samsonite design system. In your Claude Code environment:
   ```bash
   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech crypto cross-chain dark premium" --design-system --stack nextjs -f markdown
   ```
@@ -1920,7 +1920,7 @@ DONE WHEN: POST /agent/execute with a test message returns a real response from 
   Apply it to the body: `<body className={syne.className}>`
 
 - [ ] Create `frontend/components/layout/Navbar.tsx` — the top navigation bar present on all pages:
-  - Left: "AUTOMATA" logo in accent pink, bold
+  - Left: "SAMSONITE" logo in accent pink, bold
   - Center: nav links — Build, Chat, History (hidden on mobile, shown on desktop)
   - Right: `WalletBar` component (built next)
   - Use Framer Motion for a subtle fade-in on load
@@ -1943,11 +1943,11 @@ DONE WHEN: Navbar visible on all pages. Wallet connects via Privy on "Connect Wa
 - [ ] Build `frontend/app/page.tsx` — the first thing new users see:
   - **Hero section:**
     - Headline (large, display font): "Cross-Chain Finance. In Plain English."
-    - Subheadline: one sentence explaining Automata
+    - Subheadline: one sentence explaining Samsonite
     - Two CTA buttons: "Start Chatting" → `/chat` and "Build a Flow" → `/build`
     - Animated gradient background (Framer Motion or pure CSS)
   - **How it works section** — 3 steps in plain English:
-    - Step 1: "Tell Automata what you want to do with your money"
+    - Step 1: "Tell Samsonite what you want to do with your money"
     - Step 2: "The agent finds the best route across any chain"
     - Step 3: "Confirm once. Done."
   - **Supported chains section** — logos/badges for Base, Celo, Ethereum, Stellar
@@ -1955,7 +1955,7 @@ DONE WHEN: Navbar visible on all pages. Wallet connects via Privy on "Connect Wa
     - "Swap any token" — USDC to XLM, cKES, ETH, and more
     - "Bridge in seconds" — Native USDC via Circle CCTP V2. No wrapped tokens.
     - "Earn yield" — The agent finds the best rate. You just approve.
-  - Footer: "Automata" + "Built for Africa. Built for the world."
+  - Footer: "Samsonite" + "Built for Africa. Built for the world."
 
 ```
 DONE WHEN: Landing page looks genuinely impressive. Both CTA buttons navigate correctly. Animations smooth.
@@ -2003,7 +2003,7 @@ Build this BEFORE the chat page — the chat page needs the API key that users s
 - [ ] Build `frontend/app/settings/page.tsx`:
   - **Gemini API Key section:**
     - Label: "Your AI Agent Key"
-    - Description: "Automata uses your own Gemini API key so you stay in control. Get a free key at aistudio.google.com"
+    - Description: "Samsonite uses your own Gemini API key so you stay in control. Get a free key at aistudio.google.com"
     - Input field (type password so key is hidden)
     - "Save Key" button — saves to localStorage encrypted
     - Success toast when saved
@@ -2020,19 +2020,19 @@ Build this BEFORE the chat page — the chat page needs the API key that users s
   ```typescript
   export function saveGeminiKey(key: string): void {
     // In a real app you'd encrypt this. For now store in localStorage.
-    localStorage.setItem('automata_gemini_key', key);
+    localStorage.setItem('samsonite_gemini_key', key);
   }
 
   export function getGeminiKey(): string | null {
-    return localStorage.getItem('automata_gemini_key');
+    return localStorage.getItem('samsonite_gemini_key');
   }
 
   export function saveAgentMode(mode: 'assisted' | 'autonomous'): void {
-    localStorage.setItem('automata_agent_mode', mode);
+    localStorage.setItem('samsonite_agent_mode', mode);
   }
 
   export function getAgentMode(): 'assisted' | 'autonomous' {
-    return (localStorage.getItem('automata_agent_mode') as any) ?? 'assisted';
+    return (localStorage.getItem('samsonite_agent_mode') as any) ?? 'assisted';
   }
   ```
 
@@ -2090,7 +2090,7 @@ The primary product experience.
   - Check if Gemini API key is saved. If not, show a banner: "Add your Gemini API key in Settings to start chatting" with a link to /settings
   - Check if wallet is connected. If not, show "Connect your wallet to continue" with Privy connect button
   - **Chat area** (scrollable, takes up most of the screen):
-    - Agent messages: left-aligned, dark card, Automata logo avatar
+    - Agent messages: left-aligned, dark card, Samsonite logo avatar
     - User messages: right-aligned, accent pink/purple gradient
     - Timestamps on each message
     - Auto-scrolls to the latest message
@@ -2286,7 +2286,7 @@ DONE WHEN: buildStakeTx returns a real unsigned transaction that can be submitte
   });
 
   // Change app.listen to server.listen
-  server.listen(PORT, () => console.log(`Automata backend running on port ${PORT}`));
+  server.listen(PORT, () => console.log(`Samsonite backend running on port ${PORT}`));
   ```
 
 - [ ] Create `backend/src/services/txMonitorService.ts`:
@@ -2393,7 +2393,7 @@ DONE WHEN: All 3 steps visible in StatusPanel and confirmed on testnet explorer.
 
 ### Step 5.6 — Error handling tests
 - [ ] Reject MetaMask transaction → StatusPanel shows "You cancelled the transaction" (not a raw error)
-- [ ] Backend unreachable → StatusPanel shows "Could not connect to Automata. Check your connection."
+- [ ] Backend unreachable → StatusPanel shows "Could not connect to Samsonite. Check your connection."
 - [ ] Invalid Gemini API key → clear message: "Your AI key is invalid. Update it in Settings."
 - [ ] Insufficient balance → agent says "You don't have enough USDC on Base for this. Your current balance is X."
 - [ ] Zero console errors on Chrome and Brave
@@ -2420,7 +2420,7 @@ DONE WHEN: All 5 error scenarios show clean plain-English messages. No raw error
 # Dev 2 leads
 # ════════════════════════════════════════════════════════
 
-> **Goal:** Automata works as a MiniPay Mini App on Celo. Mobile-optimised. MiniPay wallet connects natively.
+> **Goal:** Samsonite works as a MiniPay Mini App on Celo. Mobile-optimised. MiniPay wallet connects natively.
 
 ---
 
@@ -2436,7 +2436,7 @@ DONE WHEN: All 5 error scenarios show clean plain-English messages. No raw error
 - [ ] Navigation must be accessible from a bottom tab bar on mobile
 
 ### Step 6.3 — MiniPay wallet detection
-- [ ] Detect when Automata is running inside MiniPay (check `window.ethereum.isMiniPay`)
+- [ ] Detect when Samsonite is running inside MiniPay (check `window.ethereum.isMiniPay`)
 - [ ] When inside MiniPay: use MiniPay's built-in Celo wallet instead of Privy
 - [ ] When outside MiniPay: use Privy as normal
 - [ ] Test that wallet connection works in both contexts
@@ -2446,7 +2446,7 @@ DONE WHEN: All 5 error scenarios show clean plain-English messages. No raw error
 - [ ] Note submission status here: `SUBMISSION STATUS: ___________`
 
 ```
-DONE WHEN: Automata loads inside MiniPay on a real Android phone. Wallet connects. A USDC transfer on Celo works.
+DONE WHEN: Samsonite loads inside MiniPay on a real Android phone. Wallet connects. A USDC transfer on Celo works.
 ```
 
 ---
@@ -2484,7 +2484,7 @@ DONE WHEN: Automata loads inside MiniPay on a real Android phone. Wallet connect
 
 ### Step 7.4 — README.md
 - [ ] Write the project README:
-  - What Automata is (3 sentences)
+  - What Samsonite is (3 sentences)
   - How to run locally (exact commands, copy-pasteable)
   - How to set up environment variables
   - Tech stack overview
@@ -2504,7 +2504,7 @@ DONE WHEN: Automata loads inside MiniPay on a real Android phone. Wallet connect
 
 ## 🏁 FINAL SHIP CHECKLIST
 
-Every box must be checked before calling Automata v1 done.
+Every box must be checked before calling Samsonite v1 done.
 
 - [ ] All 5 pages load on production URL without errors
 - [ ] Google sign-in creates embedded wallet automatically via Privy

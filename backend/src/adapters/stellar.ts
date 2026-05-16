@@ -13,7 +13,7 @@ import { horizonServer, sorobanServer, STELLAR_NETWORK_PASSPHRASE } from '../uti
 // ---------------------------------------------------------------------------
 // stellar.ts — Stellar adapter.
 //
-// Covers everything the Automata agent needs on Stellar:
+// Covers everything the Samsonite agent needs on Stellar:
 //   1. Known asset registry     (XLM, USDC, cKES, yXLM, EURC — verified issuers)
 //   2. Account state            (balances, trustlines, sequence number)
 //   3. Classic payment XDR      (simple send — XLM or any trustline asset)

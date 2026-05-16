@@ -1,5 +1,5 @@
 {
-  "name": "automata",
+  "name": "samsonite",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -195,16 +195,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sam-Rytech/Automata-V2.git"
+    "url": "git+https://github.com/Sam-Rytech/Samsonite-V2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Sam-Rytech/Automata-V2/issues"
+    "url": "https://github.com/Sam-Rytech/Samsonite-V2/issues"
   },
-  "homepage": "https://github.com/Sam-Rytech/Automata-V2#readme",
+  "homepage": "https://github.com/Sam-Rytech/Samsonite-V2#readme",
   "devDependencies": {
     "@types/three": "^0.183.1"
   },

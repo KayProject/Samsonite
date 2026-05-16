@@ -15,7 +15,7 @@ export function Models() {
             Bring your own key.
           </h2>
           <p className="font-mono text-white/40 text-xs max-w-sm leading-relaxed">
-            Automata never stores your credentials. Enter your key once in Settings; it never leaves your device. Choose the model you trust for cross-chain execution.
+            Samsonite never stores your credentials. Enter your key once in Settings; it never leaves your device. Choose the model you trust for cross-chain execution.
           </p>
         </div>
 

@@ -1,5 +1,5 @@
-const GEMINI_KEY = 'automata_gemini_key';
-const AGENT_MODE = 'automata_agent_mode';
+const GEMINI_KEY = 'samsonite_gemini_key';
+const AGENT_MODE = 'samsonite_agent_mode';
 
 export function saveGeminiKey(key: string): void {
   if (typeof window === 'undefined') return;

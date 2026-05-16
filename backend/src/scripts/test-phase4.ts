@@ -410,7 +410,7 @@ async function testWebSocket() {
 
 async function main() {
   console.log('\n╔════════════════════════════════════════════════════════════╗');
-  console.log('║  Automata — Phase 4 Validation Tests (Steps 4.2–4.5)      ║');
+  console.log('║  Samsonite — Phase 4 Validation Tests (Steps 4.2–4.5)      ║');
   console.log('╚════════════════════════════════════════════════════════════╝');
   console.log(`  NODE_ENV = ${process.env.NODE_ENV ?? 'development (testnet)'}`);
 

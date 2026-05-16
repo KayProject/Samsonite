@@ -1,4 +1,4 @@
-# Automata — Cross-Chain AI Agent Platform
+# Samsonite — Cross-Chain AI Agent Platform
 **Version 2.0.0**
 
 Swap, Bridge, and Stake across any chain. In plain English.
@@ -7,7 +7,7 @@ Swap, Bridge, and Stake across any chain. In plain English.
 
 ## 🌎 Overview
 
-Automata is a cross-chain AI agent platform designed to make complex blockchain finance as simple as sending a text message. It lets any user — from a first-time crypto holder to a DeFi power user — execute asset swaps, cross-chain transfers, and yield staking across multiple blockchains without ever seeing technical jargon, chain IDs, hex codes, or complicated gas setups.
+Samsonite is a cross-chain AI agent platform designed to make complex blockchain finance as simple as sending a text message. It lets any user — from a first-time crypto holder to a DeFi power user — execute asset swaps, cross-chain transfers, and yield staking across multiple blockchains without ever seeing technical jargon, chain IDs, hex codes, or complicated gas setups.
 
 Users interact with the platform by either simply stating their financial intent in plain language or building workflows using drag-and-drop nodes. The AI Agent handles the reasoning, the routing, the API orchestration, and the sequence formatting. **The user only signs.**
 
@@ -23,7 +23,7 @@ Users interact with the platform by either simply stating their financial intent
 
 ## 🏗 System Architecture & Integrations
 
-Automata splits into three major isolated layers, strictly communicating across boundaries:
+Samsonite splits into three major isolated layers, strictly communicating across boundaries:
 
 ### 1. Frontend Layer
 Built for high-end fidelity, intuitive UI interactions, and comprehensive wallet handling without complicated onboarding sequences.
@@ -47,7 +47,7 @@ Built for high-end fidelity, intuitive UI interactions, and comprehensive wallet
 ---
 
 ## 🚀 Unplanned Advancements & Extended Integrations
-*During the active development sequence, the Automata platform was expanded significantly beyond the original scope detailed in the `AutomataArchitecture.docx` and `PROGRESS.md` specifications. The following features have been fully implemented natively into the project logic:*
+*During the active development sequence, the Samsonite platform was expanded significantly beyond the original scope detailed in the `SamsoniteArchitecture.docx` and `PROGRESS.md` specifications. The following features have been fully implemented natively into the project logic:*
 
 ### 1. Solana Ecosystem Expansion
 Although initially scoped strictly for EVM + Stellar targets, the Next.js frontend has profoundly integrated the **Solana** chain capability.
@@ -71,7 +71,7 @@ The frontend landing components bypassed initial SVG inline strategies heavily f
 
 ## 📍 Current Implementation Status
 
-Automata has heavily phased through its Monorepo scaffolding, integrating core intelligence protocols, and is actively validating its implementation sequences. 
+Samsonite has heavily phased through its Monorepo scaffolding, integrating core intelligence protocols, and is actively validating its implementation sequences. 
 
 ### Core Milestones Recorded (Phase 3 & 4):
 - **Backend Service Ecosystem Live**: Generated all 9 Service routes handling the Tool Executors — including live cross-chain EVM data fetchers, native Stellar Adapters, Mock Yield stagers, LI.FI quote routing, and fee estimations. `agent.ts` natively resolves `unsignedTxs` dynamically to be pushed forward to UI.
@@ -83,7 +83,7 @@ Automata has heavily phased through its Monorepo scaffolding, integrating core i
 ## 📂 Project Structure
 
 ```text
-Automata-V2/
+Samsonite-V2/
 ├── frontend/
 │   ├── app/                      
 │   │   ├── build/                # React Flow Visual Canvas Layout

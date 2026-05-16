@@ -18,15 +18,15 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Automata — Cross-Chain AI Agent',
+  title: 'Samsonite — Cross-Chain AI Agent',
   description: 'Swap, bridge, and stake across any chain. In plain English.',
   icons: {
     icon: [
-      { url: '/Automata.png', type: 'image/png' },
-      { url: '/Automata.ico', type: 'image/x-icon' }
+      { url: '/Samsonite.png', type: 'image/png' },
+      { url: '/Samsonite.ico', type: 'image/x-icon' }
     ],
-    shortcut: '/Automata.ico',
-    apple: '/Automata.png',
+    shortcut: '/Samsonite.ico',
+    apple: '/Samsonite.png',
   },
 };
 

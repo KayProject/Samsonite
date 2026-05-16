@@ -88,7 +88,7 @@ export function Hero() {
             className="w-[2px] h-4 bg-[var(--accent-pink)]"
           />
           <span>·</span>
-          <span>Automata Protocol & Cross-Chain Agent Operating System</span>
+          <span>Samsonite Protocol & Cross-Chain Agent Operating System</span>
         </motion.div>
 
         {/* Typography */}

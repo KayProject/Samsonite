@@ -33,11 +33,11 @@ export function X402Banner() {
 
             {/* Partnership Logos */}
             <div className="flex items-center gap-6 sm:gap-8 mb-12">
-              {/* Automata Logo (using the png) */}
+              {/* Samsonite Logo (using the png) */}
               <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.08)] backdrop-blur-sm">
                 <img
-                  src="/Automata.png"
-                  alt="Automata"
+                  src="/Samsonite.png"
+                  alt="Samsonite"
                   className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
                 />
               </div>
@@ -67,7 +67,7 @@ export function X402Banner() {
             </h2>
 
             <p className="font-mono text-white/60 text-sm md:text-base leading-relaxed max-w-xl">
-              Automata natively supports X402 payment middleware. Empower your AI agents to seamlessly meter access, manage networked payment schemes, and monetize capabilities across chained executions.
+              Samsonite natively supports X402 payment middleware. Empower your AI agents to seamlessly meter access, manage networked payment schemes, and monetize capabilities across chained executions.
             </p>
           </motion.div>
         </div>

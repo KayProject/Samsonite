@@ -214,7 +214,7 @@ const wss = new WebSocketServer({ server });
 wss.on('connection', (ws) => {
   console.log('[WebSocket] Client connected');
 
-  ws.send(JSON.stringify({ type: 'connected', message: 'Automata WebSocket ready' }));
+  ws.send(JSON.stringify({ type: 'connected', message: 'Samsonite WebSocket ready' }));
 
   ws.on('message', (data) => {
     try {
@@ -249,5 +249,5 @@ wss.on('connection', (ws) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Automata backend running on port ${PORT} (HTTP + WebSocket)`);
+  console.log(`Samsonite backend running on port ${PORT} (HTTP + WebSocket)`);
 });

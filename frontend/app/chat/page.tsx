@@ -34,7 +34,7 @@ function ChatPageContent() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('automata_execution_mode');
+    const savedMode = localStorage.getItem('samsonite_execution_mode');
     if (savedMode === 'assisted' || savedMode === 'autonomous') {
       setExecutionMode(savedMode);
     }
@@ -193,14 +193,14 @@ function ChatPageContent() {
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black/60 z-40 backdrop-blur-sm lg:hidden" />
             <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F0F1A] z-50 lg:hidden">
-              <Sidebar activeMode="chat" executionMode={executionMode} setExecutionMode={(m) => { setExecutionMode(m); localStorage.setItem('automata_execution_mode', m); }} />
+              <Sidebar activeMode="chat" executionMode={executionMode} setExecutionMode={(m) => { setExecutionMode(m); localStorage.setItem('samsonite_execution_mode', m); }} />
             </motion.div>
           </>
         )}
       </AnimatePresence>
 
       <div className="hidden lg:block shrink-0 z-40">
-        <Sidebar activeMode="chat" executionMode={executionMode} setExecutionMode={(m) => { setExecutionMode(m); localStorage.setItem('automata_execution_mode', m); }} />
+        <Sidebar activeMode="chat" executionMode={executionMode} setExecutionMode={(m) => { setExecutionMode(m); localStorage.setItem('samsonite_execution_mode', m); }} />
       </div>
 
       <main className="flex-1 flex flex-col min-w-0">
@@ -225,14 +225,14 @@ function ChatPageContent() {
             <div className="space-y-10">
               {messages.map((m) => (
                 <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
-                  <div className="font-mono text-[9px] text-white/30 font-bold uppercase mb-2 tracking-[0.2em]">{m.role === 'user' ? 'Operator' : 'Automata Oracle'}</div>
+                  <div className="font-mono text-[9px] text-white/30 font-bold uppercase mb-2 tracking-[0.2em]">{m.role === 'user' ? 'Operator' : 'Samsonite Oracle'}</div>
                   <div className={`p-5 sm:p-6 max-w-[95%] sm:max-w-[80%] font-mono text-xs sm:text-sm shadow-xl rounded-none ${m.role === 'user' ? 'bg-[#E91E8C]/[0.06] border border-[#E91E8C]/40 text-white shadow-[0_0_20px_rgba(233,30,140,0.1)]' : 'bg-[#1A1A2E] border border-white/5 text-white/90'}`}>{m.content}</div>
                 </div>
               ))}
 
               {status === 'thinking' && (
                 <div className="flex flex-col items-start gap-4">
-                  <div className="font-mono text-[10px] text-[#E91E8C] font-black uppercase flex items-center gap-2"><span className="w-2 h-2 bg-[#E91E8C] animate-pulse" /> Automata Oracle —— Thinking</div>
+                  <div className="font-mono text-[10px] text-[#E91E8C] font-black uppercase flex items-center gap-2"><span className="w-2 h-2 bg-[#E91E8C] animate-pulse" /> Samsonite Oracle —— Thinking</div>
                   <div className="font-mono text-xs text-white/40 space-y-1"><p>{`> Transmitting intent to LLM Core...`}</p><p>{`> Awaiting Agent compilation...`}</p></div>
                 </div>
               )}
@@ -254,7 +254,7 @@ function ChatPageContent() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 disabled={status !== 'idle'}
-                placeholder={status === 'idle' ? "Ask Automata..." : "Agent is busy..."}
+                placeholder={status === 'idle' ? "Ask Samsonite..." : "Agent is busy..."}
                 className="flex-1 bg-transparent border-none outline-none px-4 sm:px-6 font-mono text-xs sm:text-sm text-white placeholder:text-white/20 disabled:opacity-50"
               />
               <button

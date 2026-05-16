@@ -40,7 +40,7 @@ function HistoryPageContent() {
           id: record.id,
           type: record.actionType || 'FLOW',
           date: new Date(record.createdAt).toLocaleString(),
-          title: record.details?.steps ? `Executed ${record.details.steps} modules` : 'Automata Execution',
+          title: record.details?.steps ? `Executed ${record.details.steps} modules` : 'Samsonite Execution',
           fromNetwork: 'VARIOUS', 
           toNetwork: 'VARIOUS',
           status: record.status || 'SUCCESS',

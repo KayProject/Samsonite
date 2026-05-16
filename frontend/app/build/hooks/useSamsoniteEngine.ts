@@ -9,7 +9,7 @@ import { sendAgentMessage, UnsignedTx } from '@/lib/api';
 import { useStellar } from '@/app/StellarProvider';
 import { useTransactionExecutor } from '@/app/hooks/useTransactionExecutor';
 
-export function useAutomataEngine() {
+export function useSamsoniteEngine() {
   const { wallets } = useWallets();
   const activeWallet = wallets?.[0];
   const { stellarAddress, signStellarTransaction } = useStellar();
@@ -64,12 +64,12 @@ export function useAutomataEngine() {
     setIsProcessing(true);
     setStatusState('thinking');
     setStatusMessage('Compiling Execution Plan...');
-    setTerminalLogs(['[SYS] Booting Automata Execution Engine v1.4...']);
+    setTerminalLogs(['[SYS] Booting Samsonite Execution Engine v1.4...']);
 
     try {
       const intent = buildIntent(sequence);
       addLog(`[SYS] Parsed sequence. Generated Intent: "${intent.substring(0, 50)}..."`);
-      addLog(`[NET] Transmitting to Automata Backend...`);
+      addLog(`[NET] Transmitting to Samsonite Backend...`);
 
       const result = await sendAgentMessage(intent, activeWallet.address, geminiKey, crypto.randomUUID(), stellarAddress);
 

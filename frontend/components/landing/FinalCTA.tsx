@@ -55,7 +55,7 @@ export function FinalCTA() {
         </h2>
         
         <Button size="lg" className="w-[280px]" onClick={handleLaunch}>
-          Launch Automata
+          Launch Samsonite
         </Button>
       </div>
     </section>

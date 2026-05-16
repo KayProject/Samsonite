@@ -24,7 +24,7 @@ export type AgentResponse = {
 };
 
 /**
- * Send a message to the Automata AI agent.
+ * Send a message to the Samsonite AI agent.
  *
  * @param message        - What the user typed
  * @param walletAddress  - The user's EVM wallet address (from Privy)

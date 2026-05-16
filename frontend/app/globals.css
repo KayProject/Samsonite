@@ -82,7 +82,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Automata design tokens */
+  /* Samsonite design tokens */
   --bg-primary: #0F0F1A;
   --bg-secondary: #0F0F1A;
   --bg-card: #1A1A2E;
@@ -281,7 +281,7 @@
   }
 }
 
-/* Stellar Wallets Kit — Automata Theme Override */
+/* Stellar Wallets Kit — Samsonite Theme Override */
 stellar-wallets-modal {
   --swk-background: #0F0F1A;
   --swk-background-secondary: #1A1A2E;

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { StellarWalletsKit, KitEventType, allowAllModules } from '@creit-tech/stellar-wallets-kit';
+import { StellarWalletsKit, KitEventType } from '@creit-tech/stellar-wallets-kit';
+import { allowAllModules } from '@creit-tech/stellar-wallets-kit/modules/utils';
 import { Networks } from '@stellar/stellar-sdk';
 
 interface StellarContextType {

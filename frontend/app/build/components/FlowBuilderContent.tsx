@@ -23,7 +23,7 @@ import { TerminalView } from './TerminalView';
 import { ExecutionOverlay } from './ExecutionOverlay';
 import { CanvasHUD } from './CanvasHUD';
 import { PlanReview } from '@/components/PlanReview';
-import { useAutomataEngine } from '../hooks/useAutomataEngine';
+import { useSamsoniteEngine } from '../hooks/useSamsoniteEngine';
 import { saveFlowToDb, getFlowsFromDb } from '@/lib/api';
 import { useWallets } from '@privy-io/react-auth';
 
@@ -45,7 +45,7 @@ export function FlowBuilderContent() {
   const [flowName, setFlowName] = useState('');
   const [savedFlows, setSavedFlows] = useState<any[]>([]);
 
-  const engine = useAutomataEngine();
+  const engine = useSamsoniteEngine();
   const { wallets } = useWallets();
   const walletAddress = wallets[0]?.address;
   const reactFlowWrapper = useRef<HTMLDivElement>(null);

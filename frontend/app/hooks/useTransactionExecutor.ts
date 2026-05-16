@@ -2,7 +2,7 @@
 
 import { saveHistoryToDb, UnsignedTx } from '@/lib/api';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL ?? 'https://automata-backend-production.up.railway.app';
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL ?? 'https://samsonite-backend-production.up.railway.app';
 
 const CHAIN_IDS: Record<string, number> = {
   base:     8453,

@@ -35,8 +35,8 @@ function SettingsPageContent() {
 
   useEffect(() => {
     const savedKey = localStorage.getItem('gemini_api_key');
-    const savedMode = localStorage.getItem('automata_execution_mode');
-    const savedHud = localStorage.getItem('automata_hud_enabled');
+    const savedMode = localStorage.getItem('samsonite_execution_mode');
+    const savedHud = localStorage.getItem('samsonite_hud_enabled');
 
     if (savedKey) setApiKey(savedKey);
     if (savedMode) setExecutionMode(savedMode);
@@ -54,14 +54,14 @@ function SettingsPageContent() {
 
   const handleModeChange = (mode: string) => {
     setExecutionMode(mode);
-    localStorage.setItem('automata_execution_mode', mode);
+    localStorage.setItem('samsonite_execution_mode', mode);
     toast.info('Execution Mode Updated', { description: `Mode set to ${mode.toUpperCase()}.` });
   };
 
   const handleHudToggle = () => {
     const newState = !hudEnabled;
     setHudEnabled(newState);
-    localStorage.setItem('automata_hud_enabled', String(newState));
+    localStorage.setItem('samsonite_hud_enabled', String(newState));
     toast.info('Appearance Updated', { description: `Interface HUD is now ${newState ? 'ON' : 'OFF'}.` });
   };
 

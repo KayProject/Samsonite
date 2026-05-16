@@ -39,7 +39,7 @@ async function check(label: string, fn: () => Promise<string>): Promise<boolean>
 
 async function main() {
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('  Automata — RPC connectivity test');
+  console.log('  Samsonite — RPC connectivity test');
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
   let passed = 0;

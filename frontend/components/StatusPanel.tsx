@@ -25,7 +25,7 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
 
   const style = stateStyles[status] || stateStyles.thinking;
   const defaultMessages: Record<string, string> = {
-    thinking: 'AUTOMATA ORACLE —— CALCULATING OPTIMAL ROUTE...',
+    thinking: 'SAMSONITE ORACLE —— CALCULATING OPTIMAL ROUTE...',
     executing: step && totalSteps ? `PROTOCOL —— EXECUTING STEP ${step}/${totalSteps}...` : 'EXECUTING...',
     awaiting_approval: 'OPERATOR —— REVIEW REQUIRED',
     success: 'SEQUENCE COMPLETE —— ASSETS MOVED',

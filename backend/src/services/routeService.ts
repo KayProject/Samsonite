@@ -3,7 +3,7 @@ import { horizonServer } from '../utils/rpc';
 import { getStellarAsset } from '../adapters/stellar';
 
 createConfig({
-  integrator: 'automata',
+  integrator: 'samsonite',
   apiKey: process.env.LIFI_API_KEY || undefined,
 });
 

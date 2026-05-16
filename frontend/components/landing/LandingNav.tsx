@@ -35,7 +35,7 @@ export function LandingNav() {
         {/* Branding */}
         <div className="flex items-center cursor-pointer">
           <span className="font-mono text-2xl font-black text-white tracking-tighter uppercase">
-            Automata
+            Samsonite
           </span>
         </div>
 

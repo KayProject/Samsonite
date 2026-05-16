@@ -5,7 +5,7 @@ dotenv.config();
 async function runTest() {
     const handler = new X402PaymentHandler();
     // Replace with your actual Railway URL
-    const url = 'https://automata-x402-production.up.railway.app/api/yield'; 
+    const url = 'https://samsonite-x402-production.up.railway.app/api/yield'; 
     
     try {
         console.log("🚀 Starting End-to-End Agent Test...");
