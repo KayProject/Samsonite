@@ -12,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <StellarProvider>
         <PrivyProvider
-          appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || 'ycmnru1r3d00bn0cjv75nxjs1h'}
+          appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID!}
           config={{
             loginMethods: ['email', 'google', 'wallet'],
             appearance: {
