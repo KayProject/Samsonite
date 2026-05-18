@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { StellarWalletsKit, KitEventType } from '@creit-tech/stellar-wallets-kit';
-import { allowAllModules } from '@creit-tech/stellar-wallets-kit/modules/utils';
+import { defaultModules } from '@creit-tech/stellar-wallets-kit/modules/utils';
 import { Networks } from '@stellar/stellar-sdk';
 
 interface StellarContextType {
@@ -28,7 +28,7 @@ export function StellarProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Initialize the singleton once on mount
-    StellarWalletsKit.init({ modules: allowAllModules() });
+    StellarWalletsKit.init({ modules: defaultModules() });
 
     // Restore saved address on page load
     const savedAddress = localStorage.getItem('stellar_address');
