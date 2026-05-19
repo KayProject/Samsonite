@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from 'next';
-import { Syne, IBM_Plex_Mono } from 'next/font/google';
+import { Exo_2, Orbitron } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 
-const syne = Syne({
+const exo2 = Exo_2({
   subsets: ['latin'],
-  variable: '--font-syne',
-  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-exo-2',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
-const plexMono = IBM_Plex_Mono({
+const orbitron = Orbitron({
   subsets: ['latin'],
-  variable: '--font-plex-mono',
-  weight: ['400', '500', '600', '700'],
+  variable: '--font-orbitron',
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${plexMono.variable} dark`}>
+    <html lang="en" className={`${exo2.variable} ${orbitron.variable} dark`}>
       <body className="antialiased min-h-screen bg-background text-foreground tracking-tight select-none font-sans">
         <Providers>
           <TooltipProvider>

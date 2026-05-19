@@ -13,7 +13,7 @@ export interface Transaction {
 }
 
 export const TYPE_COLORS: Record<string, string> = {
-  BRIDGE: '#E91E8C',
+  BRIDGE: '#F59E0B',
   SWAP:   '#8B5CF6',
   STAKE:  '#22C55E',
   SEND:   '#F59E0B',

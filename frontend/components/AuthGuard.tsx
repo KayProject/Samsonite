@@ -35,9 +35,9 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
   // Privy not ready yet — show nothing to avoid flash of protected content
   if (!ready) {
     return (
-      <div className="min-h-screen bg-[#0F0F1A] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0F172A] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-8 h-8 border-2 border-[#E91E8C] border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-[#F59E0B] border-t-transparent rounded-full animate-spin" />
           <span className="font-mono text-[11px] text-white/30 uppercase tracking-widest">
             Authenticating...
           </span>

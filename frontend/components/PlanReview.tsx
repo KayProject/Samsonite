@@ -7,10 +7,10 @@ import { PlanReviewProps } from '@/types/status';
 export function PlanReview({ plan, onApprove, onCancel, isExecuting = false }: PlanReviewProps) {
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-6 w-full">
-      <div className="bg-[#1A1A2E]/60 border border-[#E91E8C]/40 p-6 rounded-none relative backdrop-blur-md">
+      <div className="bg-[#1E293B]/60 border border-[#F59E0B]/40 p-6 rounded-none relative backdrop-blur-md">
         <div className="flex items-center justify-between mb-8">
             <h3 className="font-syne text-xl font-black text-white uppercase tracking-widest flex items-center gap-3">
-            <span className="w-2 h-2 bg-[#E91E8C] animate-pulse" />
+            <span className="w-2 h-2 bg-[#F59E0B] animate-pulse" />
             Transaction Plan
             </h3>
             <span className="font-mono text-[10px] text-white/30 tracking-[0.3em] uppercase">Auth Required</span>
@@ -18,8 +18,8 @@ export function PlanReview({ plan, onApprove, onCancel, isExecuting = false }: P
 
         <div className="space-y-4 mb-8">
           {plan.steps.map((step) => (
-            <div key={step.stepNumber} className="flex items-start gap-4 p-5 bg-[#0F0F1A] border border-white/5 rounded-none group hover:border-[#6A0DAD]/50 transition-all">
-              <span className="w-6 h-6 bg-[#E91E8C] text-white font-mono text-[10px] flex items-center justify-center shrink-0">
+            <div key={step.stepNumber} className="flex items-start gap-4 p-5 bg-[#0F172A] border border-white/5 rounded-none group hover:border-[#8B5CF6]/50 transition-all">
+              <span className="w-6 h-6 bg-[#F59E0B] text-white font-mono text-[10px] flex items-center justify-center shrink-0">
                 0{step.stepNumber}
               </span>
               <div className="flex-1">
@@ -56,7 +56,7 @@ export function PlanReview({ plan, onApprove, onCancel, isExecuting = false }: P
             <button 
               onClick={onApprove} 
               disabled={isExecuting} 
-              className="flex-1 sm:flex-none px-8 py-3 bg-[#E91E8C] text-white font-mono text-[10px] uppercase tracking-widest font-black transition-all hover:bg-[#E91E8C]/80 disabled:opacity-50 flex items-center justify-center gap-2"
+              className="flex-1 sm:flex-none px-8 py-3 bg-[#F59E0B] text-white font-mono text-[10px] uppercase tracking-widest font-black transition-all hover:bg-[#F59E0B]/80 disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {isExecuting ? 'SYNCING...' : 'Approve & Execute'} <ChevronRight size={14} />
             </button>

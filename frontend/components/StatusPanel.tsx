@@ -16,8 +16,8 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
   if (status === 'idle') return null;
 
   const stateStyles: Record<string, { border: string; bg: string; text: string }> = {
-    thinking: { border: '#E91E8C', bg: 'rgba(233, 30, 140, 0.05)', text: '#FFF' },
-    executing: { border: '#6A0DAD', bg: 'rgba(106, 13, 173, 0.05)', text: '#FFF' },
+    thinking: { border: '#F59E0B', bg: 'rgba(233, 30, 140, 0.05)', text: '#FFF' },
+    executing: { border: '#8B5CF6', bg: 'rgba(106, 13, 173, 0.05)', text: '#FFF' },
     awaiting_approval: { border: '#F59E0B', bg: 'rgba(245, 158, 11, 0.05)', text: '#F59E0B' },
     success: { border: '#22C55E', bg: 'rgba(34, 197, 94, 0.05)', text: '#22C55E' },
     error: { border: '#EF4444', bg: 'rgba(239, 68, 68, 0.05)', text: '#EF4444' },
@@ -42,8 +42,8 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
         className="flex items-center gap-4 px-5 py-4 border rounded-none font-mono text-[10px] tracking-[0.2em] uppercase mt-4"
         style={{ borderColor: style.border, backgroundColor: style.bg }}
       >
-        {status === 'thinking' && <Loader2 size={14} className="animate-spin text-[#E91E8C]" />}
-        {status === 'executing' && <Loader2 size={14} className="animate-spin text-[#6A0DAD]" />}
+        {status === 'thinking' && <Loader2 size={14} className="animate-spin text-[#F59E0B]" />}
+        {status === 'executing' && <Loader2 size={14} className="animate-spin text-[#8B5CF6]" />}
         {status === 'awaiting_approval' && <ClockIcon className="w-4 h-4 text-[#F59E0B]" />}
         {status === 'success' && <CheckCircleIcon className="w-4 h-4 text-[#22C55E]" />}
         {status === 'error' && <XCircleIcon className="w-4 h-4 text-[#EF4444]" />}
@@ -53,7 +53,7 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
         </span>
 
         {status === 'success' && txHash && (
-          <a href={`${EXPLORER_BASE[chainId || 'base']}${txHash}`} target="_blank" rel="noopener noreferrer" className="text-[#E91E8C] hover:underline">
+          <a href={`${EXPLORER_BASE[chainId || 'base']}${txHash}`} target="_blank" rel="noopener noreferrer" className="text-[#F59E0B] hover:underline">
             VIEW TX →
           </a>
         )}

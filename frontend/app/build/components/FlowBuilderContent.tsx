@@ -197,8 +197,8 @@ export function FlowBuilderContent() {
   }
 
   return (
-    <div className="flex h-screen bg-[#0F0F1A] text-white overflow-hidden font-mono relative">
-      <div className="hidden lg:block w-[260px] shrink-0 z-40 bg-[#0F0F1A] border-r border-white/5">
+    <div className="flex h-screen bg-[#0F172A] text-white overflow-hidden font-mono relative">
+      <div className="hidden lg:block w-[260px] shrink-0 z-40 bg-[#0F172A] border-r border-white/5">
         <Sidebar activeMode="build" />
       </div>
 
@@ -206,7 +206,7 @@ export function FlowBuilderContent() {
         {isSidebarOpen && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black/60 z-50 lg:hidden backdrop-blur-sm" />
-            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F0F1A] z-50 lg:hidden">
+            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F172A] z-50 lg:hidden">
               <Sidebar activeMode="build" />
             </motion.div>
           </>
@@ -221,10 +221,10 @@ export function FlowBuilderContent() {
             <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} className="relative bg-[#12121A] border border-white/10 p-8 w-full max-w-md shadow-2xl">
               <h3 className="font-syne text-xl font-black uppercase tracking-widest mb-2">Save Flow</h3>
               <p className="text-[10px] text-white/40 uppercase tracking-widest mb-6">Store this sequence for future execution.</p>
-              <input type="text" value={flowName} onChange={e => setFlowName(e.target.value)} placeholder="e.g., Weekly Yield Harvesting" className="w-full bg-[#0A0A12] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#E91E8C]/50 outline-none mb-6 font-mono" />
+              <input type="text" value={flowName} onChange={e => setFlowName(e.target.value)} placeholder="e.g., Weekly Yield Harvesting" className="w-full bg-[#0A0A12] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B]/50 outline-none mb-6 font-mono" />
               <div className="flex justify-end gap-3">
                 <button onClick={() => setSaveDialogOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors">Cancel</button>
-                <button onClick={handleSaveFlow} className="bg-[#E91E8C] text-white px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-[#E91E8C]/80 transition-colors">Save Sequence</button>
+                <button onClick={handleSaveFlow} className="bg-[#F59E0B] text-white px-6 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-[#F59E0B]/80 transition-colors">Save Sequence</button>
               </div>
             </motion.div>
           </div>
@@ -245,10 +245,10 @@ export function FlowBuilderContent() {
                   <div className="text-[10px] text-white/20 uppercase tracking-widest text-center border border-dashed border-white/10 p-6">No saved flows found.</div>
                 ) : (
                   savedFlows.map(flow => (
-                    <div key={flow.id} onClick={() => handleLoadFlow(flow)} className="bg-[#0A0A12] border border-white/10 p-4 cursor-pointer hover:border-[#E91E8C]/50 transition-colors group">
+                    <div key={flow.id} onClick={() => handleLoadFlow(flow)} className="bg-[#0A0A12] border border-white/10 p-4 cursor-pointer hover:border-[#F59E0B]/50 transition-colors group">
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-xs font-bold text-white uppercase tracking-widest group-hover:text-[#E91E8C] transition-colors">{flow.name}</span>
-                        <span className="text-[9px] text-[#E91E8C] tracking-widest">{flow.nodes.length} Modules</span>
+                        <span className="text-xs font-bold text-white uppercase tracking-widest group-hover:text-[#F59E0B] transition-colors">{flow.name}</span>
+                        <span className="text-[9px] text-[#F59E0B] tracking-widest">{flow.nodes.length} Modules</span>
                       </div>
                       <div className="text-[8px] text-white/40 uppercase tracking-widest">{new Date(flow.savedAt).toLocaleString()}</div>
                     </div>
@@ -265,13 +265,13 @@ export function FlowBuilderContent() {
       </AnimatePresence>
 
       <main className="flex-1 flex flex-col min-w-0 bg-[#0A0A12] relative">
-        <header className="h-16 border-b border-white/5 flex items-center justify-between px-4 sm:px-6 bg-[#0F0F1A] shrink-0 z-20">
+        <header className="h-16 border-b border-white/5 flex items-center justify-between px-4 sm:px-6 bg-[#0F172A] shrink-0 z-20">
           <div className="flex items-center gap-4">
             <button className="lg:hidden p-2 -ml-2 text-white/60 hover:text-white" onClick={() => setIsSidebarOpen(true)}>
               <Bars3Icon className="w-5 h-5" />
             </button>
-            <div className="text-[10px] text-[#E91E8C] tracking-[0.3em] uppercase font-bold flex items-center gap-6">
-              <span className="text-[#E91E8C]">NETWORK</span>
+            <div className="text-[10px] text-[#F59E0B] tracking-[0.3em] uppercase font-bold flex items-center gap-6">
+              <span className="text-[#F59E0B]">NETWORK</span>
               <span className="hidden sm:inline text-white/40">AGENTS</span>
               <span className="hidden sm:inline text-white/40">BRIDGE</span>
             </div>
@@ -282,9 +282,9 @@ export function FlowBuilderContent() {
               <button onClick={() => setSaveDialogOpen(true)} className="px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-colors">Save Flow</button>
             </div>
 
-            <div className="flex bg-[#1A1A2E] p-1 border border-white/5">
-              <button onClick={() => setView('visual')} className={`px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase ${view === 'visual' ? 'bg-[#E91E8C] text-white' : 'text-white/40 hover:text-white'}`}><Squares2X2Icon className="w-3 h-3 inline sm:mr-2" /> <span className="hidden sm:inline">Visual</span></button>
-              <button onClick={() => setView('terminal')} className={`px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase ${view === 'terminal' ? 'bg-[#E91E8C] text-white' : 'text-white/40 hover:text-white'}`}><CodeBracketIcon className="w-3 h-3 inline sm:mr-2" /> <span className="hidden sm:inline">Terminal</span></button>
+            <div className="flex bg-[#1E293B] p-1 border border-white/5">
+              <button onClick={() => setView('visual')} className={`px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase ${view === 'visual' ? 'bg-[#F59E0B] text-white' : 'text-white/40 hover:text-white'}`}><Squares2X2Icon className="w-3 h-3 inline sm:mr-2" /> <span className="hidden sm:inline">Visual</span></button>
+              <button onClick={() => setView('terminal')} className={`px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase ${view === 'terminal' ? 'bg-[#F59E0B] text-white' : 'text-white/40 hover:text-white'}`}><CodeBracketIcon className="w-3 h-3 inline sm:mr-2" /> <span className="hidden sm:inline">Terminal</span></button>
             </div>
           </div>
         </header>
@@ -343,7 +343,7 @@ export function FlowBuilderContent() {
               {engine.isSigningWallet && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
                   <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="bg-white rounded-2xl p-6 w-full max-w-sm flex flex-col items-center text-center shadow-2xl">
-                    <div className="w-12 h-12 border-4 border-gray-100 border-t-[#6A0DAD] rounded-full animate-spin mb-4" />
+                    <div className="w-12 h-12 border-4 border-gray-100 border-t-[#8B5CF6] rounded-full animate-spin mb-4" />
                     <h3 className="text-gray-900 font-bold text-lg mb-1">Confirm in Wallet</h3>
                     <p className="text-gray-500 text-sm">Please sign the transaction in your connected wallet provider to continue.</p>
                   </motion.div>
@@ -365,7 +365,7 @@ export function FlowBuilderContent() {
         </div>
 
         <div className="lg:hidden absolute bottom-[100px] right-6 z-30">
-          <button onClick={() => setIsMobileDrawerOpen(true)} className="w-14 h-14 bg-[#E91E8C] border border-[#E91E8C] flex items-center justify-center shadow-[0_0_30px_rgba(233,30,140,0.4)] hover:bg-[#E91E8C]/80 transition-colors">
+          <button onClick={() => setIsMobileDrawerOpen(true)} className="w-14 h-14 bg-[#F59E0B] border border-[#F59E0B] flex items-center justify-center shadow-[0_0_30px_rgba(233,30,140,0.4)] hover:bg-[#F59E0B]/80 transition-colors">
             <PlusIcon className="w-6 h-6 text-white" />
           </button>
         </div>
@@ -381,7 +381,7 @@ export function FlowBuilderContent() {
                 </div>
                 <div className="grid grid-cols-2 gap-3 overflow-visible">
                   {PALETTE_ITEMS.map((item) => (
-                    <motion.div key={item.type} drag dragSnapToOrigin onDragEnd={(e, info) => handleMobileDragEnd(e, info, item.type)} whileDrag={{ scale: 1.1, zIndex: 999 }} className="bg-[#1A1A2E] border border-white/5 p-4 cursor-grab active:cursor-grabbing shadow-lg" style={{ borderLeft: `2px solid ${TYPE_COLOURS[item.type]}` }}>
+                    <motion.div key={item.type} drag dragSnapToOrigin onDragEnd={(e, info) => handleMobileDragEnd(e, info, item.type)} whileDrag={{ scale: 1.1, zIndex: 999 }} className="bg-[#1E293B] border border-white/5 p-4 cursor-grab active:cursor-grabbing shadow-lg" style={{ borderLeft: `2px solid ${TYPE_COLOURS[item.type]}` }}>
                       <span className="text-[10px] font-black uppercase tracking-widest text-white">{item.type}</span>
                     </motion.div>
                   ))}
@@ -402,10 +402,10 @@ export function FlowBuilderContent() {
           )}
         </AnimatePresence>
 
-        <footer className="h-16 sm:h-20 bg-[#0F0F1A] border-t border-white/5 flex items-center px-4 sm:px-6 justify-between shrink-0 z-20 relative">
+        <footer className="h-16 sm:h-20 bg-[#0F172A] border-t border-white/5 flex items-center px-4 sm:px-6 justify-between shrink-0 z-20 relative">
           <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-bold">
-            <span className={`flex items-center gap-2 ${engine.statusState === 'success' ? 'text-[#22C55E]' : engine.statusState === 'error' ? 'text-[#EF4444]' : 'text-[#E91E8C]'}`}>
-              <span className={`w-2 h-2 rounded-full ${engine.statusState === 'thinking' || engine.statusState === 'executing' || engine.statusState === 'awaiting_approval' ? 'bg-[#F59E0B] animate-pulse' : engine.statusState === 'success' ? 'bg-[#22C55E]' : engine.statusState === 'error' ? 'bg-[#EF4444]' : 'bg-[#E91E8C]'}`} />
+            <span className={`flex items-center gap-2 ${engine.statusState === 'success' ? 'text-[#22C55E]' : engine.statusState === 'error' ? 'text-[#EF4444]' : 'text-[#F59E0B]'}`}>
+              <span className={`w-2 h-2 rounded-full ${engine.statusState === 'thinking' || engine.statusState === 'executing' || engine.statusState === 'awaiting_approval' ? 'bg-[#F59E0B] animate-pulse' : engine.statusState === 'success' ? 'bg-[#22C55E]' : engine.statusState === 'error' ? 'bg-[#EF4444]' : 'bg-[#F59E0B]'}`} />
               {engine.statusState === 'idle' ? `${nodes.length} Modules Ready` : engine.statusState}
             </span>
             <span className="text-white/40 border-l border-white/10 pl-4 hidden sm:block">{engine.statusMessage}</span>
@@ -414,7 +414,7 @@ export function FlowBuilderContent() {
             <button onClick={() => fireProcess('simulate')} disabled={engine.isProcessing || engine.statusState === 'awaiting_approval' || engine.statusState === 'executing'} className="px-8 py-3.5 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/5 transition-colors hidden sm:block disabled:opacity-50">
               Simulate
             </button>
-            <button onClick={() => fireProcess('execute')} disabled={engine.isProcessing || engine.statusState === 'awaiting_approval' || engine.statusState === 'executing'} className="bg-[#E91E8C] text-white px-10 py-3.5 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#E91E8C]/80 transition-colors disabled:opacity-50">
+            <button onClick={() => fireProcess('execute')} disabled={engine.isProcessing || engine.statusState === 'awaiting_approval' || engine.statusState === 'executing'} className="bg-[#F59E0B] text-white px-10 py-3.5 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#F59E0B]/80 transition-colors disabled:opacity-50">
               Execute Flow →
             </button>
           </div>

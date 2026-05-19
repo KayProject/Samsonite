@@ -11,7 +11,7 @@ export function BuildSidebar() {
   ];
 
   return (
-    <aside className="w-[260px] h-full bg-[#0F0F1A] border-r border-white/5 flex flex-col p-6 overflow-y-auto">
+    <aside className="w-[260px] h-full bg-[#0F172A] border-r border-white/5 flex flex-col p-6 overflow-y-auto">
       {/* Brand Header */}
       <div className="mb-12 mt-4 md:mt-0">
         <h1 className="font-mono text-2xl font-black text-white tracking-tighter uppercase mb-8">Samsonite</h1>
@@ -19,8 +19,8 @@ export function BuildSidebar() {
         {/* Connected Wallet Snippet */}
         <div className="mb-10">
           <div className="font-mono text-[10px] text-white/30 tracking-[0.2em] mb-4 uppercase">01 —— Connected Wallet</div>
-          <div className="bg-[#1A1A2E] p-4 flex items-center gap-3 border-l-2 border-[#E91E8C]">
-            <div className="w-8 h-8 bg-[#E91E8C] flex items-center justify-center shrink-0">
+          <div className="bg-[#1E293B] p-4 flex items-center gap-3 border-l-2 border-[#F59E0B]">
+            <div className="w-8 h-8 bg-[#F59E0B] flex items-center justify-center shrink-0">
               <WalletIcon className="w-4 h-4 text-white" />
             </div>
             <div className="min-w-0">
@@ -37,7 +37,7 @@ export function BuildSidebar() {
       <nav className="space-y-2 mb-10">
         {navItems.map((item) => (
           <Link key={item.name} href={item.href}>
-            <button className={`w-full flex items-center gap-4 px-4 py-3 font-syne text-[13px] uppercase font-bold transition-all ${item.active ? 'bg-[#E91E8C]/10 text-[#E91E8C] border-l-2 border-[#E91E8C]' : 'text-white/40 hover:text-white hover:bg-white/5 border-l-2 border-transparent'}`}>
+            <button className={`w-full flex items-center gap-4 px-4 py-3 font-syne text-[13px] uppercase font-bold transition-all ${item.active ? 'bg-[#F59E0B]/10 text-[#F59E0B] border-l-2 border-[#F59E0B]' : 'text-white/40 hover:text-white hover:bg-white/5 border-l-2 border-transparent'}`}>
               <item.icon className="w-5 h-5" />
               {item.name}
             </button>
@@ -47,7 +47,7 @@ export function BuildSidebar() {
 
       {/* Bottom Actions */}
       <div className="mt-auto space-y-6">
-        <button className="w-full bg-[#E91E8C] text-white py-4 font-syne font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-[#E91E8C]/80 transition-colors">
+        <button className="w-full bg-[#F59E0B] text-white py-4 font-syne font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-[#F59E0B]/80 transition-colors">
           Launch Agent
         </button>
 

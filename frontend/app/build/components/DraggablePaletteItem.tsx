@@ -23,7 +23,7 @@ export function DraggablePaletteItem({
           setTimeout(() => setIsRecovering(true), 0);
         }}
         onDragEnd={() => setTimeout(() => setIsRecovering(false), 800)}
-        className={`absolute inset-0 bg-[#1A1A2E] border border-white/5 p-5 cursor-grab active:cursor-grabbing hover:bg-white/5 transition-opacity duration-700 z-10 flex flex-col justify-center ${isRecovering ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+        className={`absolute inset-0 bg-[#1E293B] border border-white/5 p-5 cursor-grab active:cursor-grabbing hover:bg-white/5 transition-opacity duration-700 z-10 flex flex-col justify-center ${isRecovering ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
         style={{ borderLeft: `2px solid ${TYPE_COLOURS[item.type]}` }}
       >
         <div className="flex justify-between items-center mb-2 pointer-events-none">

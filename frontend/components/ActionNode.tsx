@@ -32,9 +32,9 @@ export function ActionNode({ type, chain, asset, amount, onDelete, index }: Acti
       {/* Connector Line */}
       <div className="absolute -left-[31px] top-0 bottom-0 w-[2px] bg-white/5 group-last:bottom-1/2" />
       
-      <div className="bg-[#1A1A2E]/60 border border-white/5 p-5 rounded-none hover:border-[#E91E8C]/40 transition-all flex items-center gap-6">
-        <div className="w-10 h-10 bg-[#E91E8C]/10 border border-[#E91E8C]/20 flex items-center justify-center shrink-0">
-          <Icon className="w-5 h-5 text-[#E91E8C]" />
+      <div className="bg-[#1E293B]/60 border border-white/5 p-5 rounded-none hover:border-[#F59E0B]/40 transition-all flex items-center gap-6">
+        <div className="w-10 h-10 bg-[#F59E0B]/10 border border-[#F59E0B]/20 flex items-center justify-center shrink-0">
+          <Icon className="w-5 h-5 text-[#F59E0B]" />
         </div>
 
         <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">

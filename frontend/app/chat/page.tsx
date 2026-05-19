@@ -183,8 +183,8 @@ function ChatPageContent() {
   };
 
   return (
-    <div className="flex h-screen bg-[#0F0F1A] text-white overflow-hidden relative">
-      <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="lg:hidden absolute top-6 left-6 z-50 p-2 bg-[#1A1A2E] border border-white/10">
+    <div className="flex h-screen bg-[#0F172A] text-white overflow-hidden relative">
+      <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="lg:hidden absolute top-6 left-6 z-50 p-2 bg-[#1E293B] border border-white/10">
         {isSidebarOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
       </button>
 
@@ -192,7 +192,7 @@ function ChatPageContent() {
         {isSidebarOpen && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black/60 z-40 backdrop-blur-sm lg:hidden" />
-            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F0F1A] z-50 lg:hidden">
+            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F172A] z-50 lg:hidden">
               <Sidebar activeMode="chat" executionMode={executionMode} setExecutionMode={(m) => { setExecutionMode(m); localStorage.setItem('samsonite_execution_mode', m); }} />
             </motion.div>
           </>
@@ -214,8 +214,8 @@ function ChatPageContent() {
                     { id: '01', title: 'QUERY', desc: 'Check USDC balance across all active chains.' },
                     { id: '02', title: 'BRIDGE', desc: 'Bridge 50 USDC from Base to Celo via Wormhole.' }
                   ].map((s) => (
-                    <button key={s.id} onClick={() => handleSend(s.desc)} className="text-left bg-[#1A1A2E]/40 border border-white/5 p-6 hover:border-[#E91E8C]/40 transition-all group rounded-none">
-                      <div className="font-mono text-[9px] text-[#E91E8C] tracking-[0.3em] mb-3 uppercase font-bold">{s.title} —— {s.id}</div>
+                    <button key={s.id} onClick={() => handleSend(s.desc)} className="text-left bg-[#1E293B]/40 border border-white/5 p-6 hover:border-[#F59E0B]/40 transition-all group rounded-none">
+                      <div className="font-mono text-[9px] text-[#F59E0B] tracking-[0.3em] mb-3 uppercase font-bold">{s.title} —— {s.id}</div>
                       <p className="font-mono text-xs text-white/60 group-hover:text-white transition-colors">{s.desc}</p>
                     </button>
                   ))}
@@ -226,13 +226,13 @@ function ChatPageContent() {
               {messages.map((m) => (
                 <div key={m.id} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
                   <div className="font-mono text-[9px] text-white/30 font-bold uppercase mb-2 tracking-[0.2em]">{m.role === 'user' ? 'Operator' : 'Samsonite Oracle'}</div>
-                  <div className={`p-5 sm:p-6 max-w-[95%] sm:max-w-[80%] font-mono text-xs sm:text-sm shadow-xl rounded-none ${m.role === 'user' ? 'bg-[#E91E8C]/[0.06] border border-[#E91E8C]/40 text-white shadow-[0_0_20px_rgba(233,30,140,0.1)]' : 'bg-[#1A1A2E] border border-white/5 text-white/90'}`}>{m.content}</div>
+                  <div className={`p-5 sm:p-6 max-w-[95%] sm:max-w-[80%] font-mono text-xs sm:text-sm shadow-xl rounded-none ${m.role === 'user' ? 'bg-[#F59E0B]/[0.06] border border-[#F59E0B]/40 text-white shadow-[0_0_20px_rgba(233,30,140,0.1)]' : 'bg-[#1E293B] border border-white/5 text-white/90'}`}>{m.content}</div>
                 </div>
               ))}
 
               {status === 'thinking' && (
                 <div className="flex flex-col items-start gap-4">
-                  <div className="font-mono text-[10px] text-[#E91E8C] font-black uppercase flex items-center gap-2"><span className="w-2 h-2 bg-[#E91E8C] animate-pulse" /> Samsonite Oracle —— Thinking</div>
+                  <div className="font-mono text-[10px] text-[#F59E0B] font-black uppercase flex items-center gap-2"><span className="w-2 h-2 bg-[#F59E0B] animate-pulse" /> Samsonite Oracle —— Thinking</div>
                   <div className="font-mono text-xs text-white/40 space-y-1"><p>{`> Transmitting intent to LLM Core...`}</p><p>{`> Awaiting Agent compilation...`}</p></div>
                 </div>
               )}
@@ -245,9 +245,9 @@ function ChatPageContent() {
           </div>
         </div>
 
-        <div className="w-full p-4 sm:p-8 md:p-12 border-t border-white/5 bg-[#0F0F1A]">
+        <div className="w-full p-4 sm:p-8 md:p-12 border-t border-white/5 bg-[#0F172A]">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[#1A1A2E]/95 border border-white/10 p-1 flex items-center shadow-2xl rounded-none focus-within:border-[#E91E8C]/50 transition-colors">
+            <div className="bg-[#1E293B]/95 border border-white/10 p-1 flex items-center shadow-2xl rounded-none focus-within:border-[#F59E0B]/50 transition-colors">
               <input
                 type="text"
                 value={input}
@@ -260,7 +260,7 @@ function ChatPageContent() {
               <button
                 onClick={() => handleSend()}
                 disabled={status !== 'idle' || !input.trim()}
-                className="bg-[#E91E8C] text-white px-6 sm:px-10 py-3 sm:py-4 font-syne font-bold uppercase text-[10px] sm:text-xs tracking-[0.3em] hover:bg-[#E91E8C]/80 transition-colors rounded-none disabled:opacity-50"
+                className="bg-[#F59E0B] text-white px-6 sm:px-10 py-3 sm:py-4 font-syne font-bold uppercase text-[10px] sm:text-xs tracking-[0.3em] hover:bg-[#F59E0B]/80 transition-colors rounded-none disabled:opacity-50"
               >
                 Execute
               </button>

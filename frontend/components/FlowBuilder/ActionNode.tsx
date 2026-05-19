@@ -5,18 +5,18 @@ import { TrashIcon } from '@heroicons/react/24/solid';
 import { ActionNodeData } from '@/types/flow';
 
 export function ActionNode({ data, selected }: NodeProps<ActionNodeData>) {
-  const color = data.color || '#E91E8C';
+  const color = data.color || '#F59E0B';
   const stepNumber = data.stepIndex ? `0${data.stepIndex}` : '01';
 
   return (
     <div className="relative">
-      {/* CAPTURE MODE GLOWING BRACKETS (Expanded with strict #E91E8C brand pink) */}
+      {/* CAPTURE MODE GLOWING BRACKETS (Expanded with strict #F59E0B brand pink) */}
       {selected && (
         <>
-          <div className="absolute -top-4 -left-4 w-5 h-5 border-t-2 border-l-2 shadow-[-2px_-2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#E91E8C]" />
-          <div className="absolute -top-4 -right-4 w-5 h-5 border-t-2 border-r-2 shadow-[2px_-2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#E91E8C]" />
-          <div className="absolute -bottom-4 -left-4 w-5 h-5 border-b-2 border-l-2 shadow-[-2px_2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#E91E8C]" />
-          <div className="absolute -bottom-4 -right-4 w-5 h-5 border-b-2 border-r-2 shadow-[2px_2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#E91E8C]" />
+          <div className="absolute -top-4 -left-4 w-5 h-5 border-t-2 border-l-2 shadow-[-2px_-2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#F59E0B]" />
+          <div className="absolute -top-4 -right-4 w-5 h-5 border-t-2 border-r-2 shadow-[2px_-2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#F59E0B]" />
+          <div className="absolute -bottom-4 -left-4 w-5 h-5 border-b-2 border-l-2 shadow-[-2px_2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#F59E0B]" />
+          <div className="absolute -bottom-4 -right-4 w-5 h-5 border-b-2 border-r-2 shadow-[2px_2px_10px_rgba(233,30,140,0.3)] pointer-events-none z-0 border-[#F59E0B]" />
 
           <div className="absolute -bottom-10 right-0 flex items-center gap-1 pointer-events-none">
             <span className="text-[7px] text-white/40 tracking-[0.2em] uppercase">Est. Gas:</span>
@@ -28,7 +28,7 @@ export function ActionNode({ data, selected }: NodeProps<ActionNodeData>) {
       {/* COMPACT NODE CARD */}
       <div
         className={`relative bg-[#12121A] border p-5 w-[240px] transition-all shadow-xl z-10
-          ${selected ? 'bg-[#1A1A2E]/80' : 'hover:border-white/20'}
+          ${selected ? 'bg-[#1E293B]/80' : 'hover:border-white/20'}
         `}
         style={{ borderColor: selected ? color : 'rgba(255,255,255,0.08)' }}
       >

@@ -73,7 +73,7 @@ function SettingsPageContent() {
 
   return (
     <div className="flex h-screen bg-[#0A0A12] text-white overflow-hidden font-mono relative">
-      <div className="hidden lg:block shrink-0 z-40 bg-[#0F0F1A] border-r border-white/5">
+      <div className="hidden lg:block shrink-0 z-40 bg-[#0F172A] border-r border-white/5">
         <Sidebar activeMode="settings" />
       </div>
 
@@ -82,7 +82,7 @@ function SettingsPageContent() {
         {isSidebarOpen && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black/60 z-50 lg:hidden backdrop-blur-sm" />
-            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F0F1A] z-50 lg:hidden">
+            <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }} className="fixed top-0 left-0 h-full w-[260px] bg-[#0F172A] z-50 lg:hidden">
               <Sidebar activeMode="settings" />
             </motion.div>
           </>
@@ -92,18 +92,18 @@ function SettingsPageContent() {
       <main className="flex-1 flex flex-col min-w-0 relative bg-dot-grid overflow-y-auto custom-scrollbar scroll-smooth">
 
         {/* Mobile Header with Hamburger */}
-        <header className="h-16 border-b border-white/5 flex items-center px-4 sm:px-6 bg-[#0F0F1A] shrink-0 z-20 lg:hidden gap-4">
+        <header className="h-16 border-b border-white/5 flex items-center px-4 sm:px-6 bg-[#0F172A] shrink-0 z-20 lg:hidden gap-4">
           <button className="p-2 -ml-2 text-white/60 hover:text-white" onClick={() => setIsSidebarOpen(true)}>
             <Bars3Icon className="w-5 h-5" />
           </button>
-          <div className="text-[10px] text-[#E91E8C] tracking-[0.3em] uppercase font-bold">
+          <div className="text-[10px] text-[#F59E0B] tracking-[0.3em] uppercase font-bold">
             05 —— Control Panel
           </div>
         </header>
 
         <div className="max-w-6xl mx-auto w-full p-6 sm:p-12 pb-32">
           <div className="mb-12 sm:mb-16">
-            <div className="hidden lg:block text-[10px] text-[#E91E8C] tracking-[0.3em] uppercase mb-4 font-bold">
+            <div className="hidden lg:block text-[10px] text-[#F59E0B] tracking-[0.3em] uppercase mb-4 font-bold">
               05 —— Control Panel
             </div>
             <h2 className="font-syne text-[3rem] sm:text-[5rem] lg:text-[6rem] font-black uppercase leading-none tracking-tighter mb-6 text-white scale-y-110 origin-left">
@@ -126,7 +126,7 @@ function SettingsPageContent() {
                     key={section.id}
                     onClick={() => scrollTo(section.id)}
                     className={`flex items-center gap-4 px-4 lg:px-6 py-4 text-left transition-all border-l-2 shrink-0
-                      ${activeSection === section.id ? 'bg-[#1A1A2E] border-[#E91E8C] text-white' : 'border-transparent text-white/40 hover:text-white hover:bg-white/5'}`}
+                      ${activeSection === section.id ? 'bg-[#1E293B] border-[#F59E0B] text-white' : 'border-transparent text-white/40 hover:text-white hover:bg-white/5'}`}
                   >
                     <span className="text-[9px] font-bold tracking-widest">
                       {section.num}
@@ -143,8 +143,8 @@ function SettingsPageContent() {
               {/* 01: AI MODEL */}
               <section id="ai-model" className="scroll-mt-12">
                 <div className="relative bg-[#12121A]/80 backdrop-blur-md border border-white/5 p-6 sm:p-10">
-                  <div className="absolute -top-[1px] -left-[1px] w-2 h-2 border-t border-l border-[#E91E8C]" />
-                  <div className="absolute -bottom-[1px] -right-[1px] w-2 h-2 border-b border-r border-[#E91E8C]" />
+                  <div className="absolute -top-[1px] -left-[1px] w-2 h-2 border-t border-l border-[#F59E0B]" />
+                  <div className="absolute -bottom-[1px] -right-[1px] w-2 h-2 border-b border-r border-[#F59E0B]" />
 
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
                     <div>
@@ -174,10 +174,10 @@ function SettingsPageContent() {
                           else toast.warning('Model Locked', { description: `${model.name} is not available in current deployment.` });
                         }}
                         className={`p-5 border cursor-pointer transition-all relative group
-                          ${selectedModel === model.id ? 'border-[#E91E8C] bg-[#E91E8C]/5' : 'border-white/10 hover:border-white/20 bg-[#0A0A12]'}`}
+                          ${selectedModel === model.id ? 'border-[#F59E0B] bg-[#F59E0B]/5' : 'border-white/10 hover:border-white/20 bg-[#0A0A12]'}`}
                       >
                         {selectedModel === model.id && (
-                          <div className="text-[8px] text-[#E91E8C] font-bold uppercase tracking-widest mb-3">
+                          <div className="text-[8px] text-[#F59E0B] font-bold uppercase tracking-widest mb-3">
                             Selected
                           </div>
                         )}
@@ -192,7 +192,7 @@ function SettingsPageContent() {
                   </div>
 
                   <div className="border-t border-white/5 pt-8">
-                    <label className="block text-[9px] text-[#E91E8C] tracking-[0.2em] font-bold uppercase mb-3">
+                    <label className="block text-[9px] text-[#F59E0B] tracking-[0.2em] font-bold uppercase mb-3">
                       Google Gemini API Key
                     </label>
                     <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -201,12 +201,12 @@ function SettingsPageContent() {
                         value={apiKey}
                         onChange={(e) => setApiKey(e.target.value)}
                         placeholder="Enter your API key..."
-                        className="flex-1 w-full bg-[#0A0A12] border border-white/10 px-5 py-4 text-sm font-mono text-white placeholder:text-white/20 focus:outline-none focus:border-[#E91E8C]/50 transition-colors"
+                        className="flex-1 w-full bg-[#0A0A12] border border-white/10 px-5 py-4 text-sm font-mono text-white placeholder:text-white/20 focus:outline-none focus:border-[#F59E0B]/50 transition-colors"
                       />
                       <div className="flex flex-col gap-3 w-full sm:w-auto">
                         <button
                           onClick={saveApiKey}
-                          className="bg-[#E91E8C] w-full text-white px-10 py-4 font-syne font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[#E91E8C]/80 transition-colors whitespace-nowrap"
+                          className="bg-[#F59E0B] w-full text-white px-10 py-4 font-syne font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-[#F59E0B]/80 transition-colors whitespace-nowrap"
                         >
                           Save Configuration
                         </button>
@@ -235,8 +235,8 @@ function SettingsPageContent() {
                   {/* EVM Wallet */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-4 border border-white/5 bg-[#0A0A12] p-5">
                     <div>
-                      <div className="text-[9px] text-[#E91E8C] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#E91E8C] animate-pulse" />
+                      <div className="text-[9px] text-[#F59E0B] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] animate-pulse" />
                         EVM Wallet — Base · Celo · Ethereum
                       </div>
                       <div className="text-sm font-bold uppercase tracking-widest text-white/90 break-all">
@@ -254,7 +254,7 @@ function SettingsPageContent() {
                   {/* Stellar Wallet */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8 border border-white/5 bg-[#0A0A12] p-5">
                     <div>
-                      <div className="text-[9px] text-[#6A0DAD] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
+                      <div className="text-[9px] text-[#8B5CF6] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
                         <span className={`w-1.5 h-1.5 rounded-full ${stellarAddress ? 'bg-[#22C55E] animate-pulse' : 'bg-white/20'}`} />
                         Stellar Wallet — XLM · USDC
                       </div>
@@ -272,7 +272,7 @@ function SettingsPageContent() {
                     ) : (
                       <button
                         onClick={connectStellar}
-                        className="border border-[#6A0DAD]/40 bg-[#6A0DAD]/10 px-6 py-3 text-[9px] font-bold tracking-widest uppercase text-[#6A0DAD] hover:bg-[#6A0DAD]/20 transition-colors shrink-0"
+                        className="border border-[#8B5CF6]/40 bg-[#8B5CF6]/10 px-6 py-3 text-[9px] font-bold tracking-widest uppercase text-[#8B5CF6] hover:bg-[#8B5CF6]/20 transition-colors shrink-0"
                       >
                         Connect Stellar
                       </button>
@@ -311,7 +311,7 @@ function SettingsPageContent() {
                           key={opt.id}
                           onClick={() => handleModeChange(opt.id)}
                           className={`p-6 border cursor-pointer transition-all flex justify-between items-center
-                            ${executionMode === opt.id ? 'border-[#E91E8C] bg-[#E91E8C]/5' : 'border-white/10 hover:border-white/20 bg-[#0A0A12]'}`}
+                            ${executionMode === opt.id ? 'border-[#F59E0B] bg-[#F59E0B]/5' : 'border-white/10 hover:border-white/20 bg-[#0A0A12]'}`}
                         >
                           <div>
                             <div className="font-syne text-base font-bold uppercase tracking-widest mb-1">
@@ -321,8 +321,8 @@ function SettingsPageContent() {
                               {opt.sub}
                             </div>
                           </div>
-                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${executionMode === opt.id ? 'border-[#E91E8C]' : 'border-white/20'}`}>
-                            {executionMode === opt.id && <div className="w-2 h-2 bg-[#E91E8C] rounded-full" />}
+                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${executionMode === opt.id ? 'border-[#F59E0B]' : 'border-white/20'}`}>
+                            {executionMode === opt.id && <div className="w-2 h-2 bg-[#F59E0B] rounded-full" />}
                           </div>
                         </div>
                       ))}
@@ -366,13 +366,13 @@ function SettingsPageContent() {
                         Interface HUD
                       </div>
                       <button onClick={handleHudToggle} className="flex items-center">
-                        <div className={`text-[10px] font-bold tracking-widest uppercase mr-3 ${hudEnabled ? 'text-[#E91E8C]' : 'text-white/40'}`}>
+                        <div className={`text-[10px] font-bold tracking-widest uppercase mr-3 ${hudEnabled ? 'text-[#F59E0B]' : 'text-white/40'}`}>
                           {hudEnabled ? 'ON' : 'OFF'}
                         </div>
-                        <div className="w-10 h-1 bg-[#1A1A2E] relative">
+                        <div className="w-10 h-1 bg-[#1E293B] relative">
                           <motion.div
                             animate={{ x: hudEnabled ? 24 : 0 }}
-                            className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 shadow-lg ${hudEnabled ? 'bg-[#E91E8C]' : 'bg-white/40'}`}
+                            className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 shadow-lg ${hudEnabled ? 'bg-[#F59E0B]' : 'bg-white/40'}`}
                           />
                         </div>
                       </button>

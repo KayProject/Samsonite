@@ -2,11 +2,18 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 import { usePrivy } from '@privy-io/react-auth';
-import { useRef, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 export function LandingNav() {
   const router = useRouter();
   const { login, authenticated, ready } = usePrivy();
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 50);
+  });
 
   const handleLaunch = () => {
     if (!ready) return; // SDK not ready yet — ignore the click
@@ -30,27 +37,37 @@ export function LandingNav() {
   }, [ready, authenticated, router]);
 
   return (
-    <div className="fixed top-8 left-0 right-0 z-50 flex justify-center px-4">
-      <nav className="glassmorphism rounded-xs flex items-center justify-between gap-8 px-8 py-3 w-full md:w-3/4 crosshair-corners relative overflow-hidden">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6 pb-2 transition-all duration-300">
+      <motion.nav 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`flex items-center justify-between gap-8 px-6 py-4 w-full md:w-4/5 lg:w-3/4 rounded-2xl border transition-all duration-300 ${isScrolled ? 'bg-bg-card/80 backdrop-blur-xl border-border-subtle shadow-xl shadow-bg-primary/50' : 'bg-transparent border-transparent'}`}
+      >
         {/* Branding */}
-        <div className="flex items-center cursor-pointer">
-          <span className="font-mono text-2xl font-black text-white tracking-tighter uppercase">
+        <div className="flex items-center cursor-pointer group" onClick={() => router.push('/')}>
+          <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center mr-3 shadow-[0_0_15px_rgba(245,158,11,0.5)] group-hover:scale-105 transition-transform">
+            <span className="font-sans font-black text-bg-primary text-xl">S</span>
+          </div>
+          <span className="font-sans text-2xl font-black text-text-primary tracking-tighter uppercase group-hover:text-accent-primary transition-colors">
             Samsonite
           </span>
         </div>
 
         {/* Action */}
         <div className="flex items-center gap-4">
-          <Button
-            variant="outline"
-            className="text-white border-white/20 tech-button bg-transparent hover:bg-white/5 font-syne text-xs sm:text-base uppercase tracking-wider h-9 sm:h-11 px-4 sm:px-8 relative"
+          <button
+            className="group relative px-6 py-2.5 bg-bg-card border border-border-subtle text-text-primary rounded-xl font-sans font-bold text-sm tracking-widest transition-all duration-300 hover:border-accent-primary/50 hover:bg-bg-card/80 overflow-hidden"
             onClick={handleLaunch}
           >
-            <span className="tech-corners-extra" />
-            Launch App
-          </Button>
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-primary/0 via-accent-primary/10 to-accent-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+            <span className="relative z-10 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+              LAUNCH APP
+            </span>
+          </button>
         </div>
-      </nav>
+      </motion.nav>
     </div>
   );
 }

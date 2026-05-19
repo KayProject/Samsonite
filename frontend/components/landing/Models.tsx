@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function Models() {
   return (
-    <section id="models" className="py-12 border-y border-[var(--border-subtle)] bg-[#0F0F1A]/50 backdrop-blur-md relative z-20">
+    <section id="models" className="py-12 border-y border-[var(--border-subtle)] bg-[#0F172A]/50 backdrop-blur-md relative z-20">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
 
         {/* Left Side: Context Text */}

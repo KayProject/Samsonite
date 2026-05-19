@@ -79,17 +79,22 @@ export function ChatMockup() {
   }, [messages]);
 
   return (
-    <div className="glassmorphism rounded-xl relative overflow-hidden flex flex-col h-[600px] border-[var(--accent-pink)]/20 border-t-[var(--accent-pink)]/40">
-      <div className="h-12 border-b border-white/10 flex items-center px-4 font-mono text-xs text-white/50 tracking-wider bg-[#0F0F1A]/80 z-10 absolute top-0 w-full">
-        SAMSONITE — Chat
+    <div className="bg-bg-card/40 backdrop-blur-2xl rounded-2xl relative overflow-hidden flex flex-col h-[600px] border border-border-subtle shadow-[0_0_40px_rgba(245,158,11,0.05)]">
+      <div className="absolute inset-0 bg-gradient-to-b from-accent-primary/5 to-transparent pointer-events-none" />
+      
+      <div className="h-14 border-b border-border-subtle flex items-center px-6 font-mono text-xs text-text-muted tracking-widest bg-bg-primary/50 backdrop-blur-md z-10 w-full shadow-sm">
+        <div className="flex gap-2 mr-4">
+          <div className="w-3 h-3 rounded-full bg-error/50"></div>
+          <div className="w-3 h-3 rounded-full bg-warning/50"></div>
+          <div className="w-3 h-3 rounded-full bg-success/50"></div>
+        </div>
+        SAMSONITE_AGENT_PROTOCOL
       </div>
 
       <div 
         ref={containerRef}
-        className="flex-1 p-6 flex flex-col gap-6 overflow-hidden pt-16 pb-20 relative z-0 scroll-smooth"
-        style={{ scrollBehavior: 'smooth' }}
+        className="flex-1 p-6 flex flex-col gap-6 overflow-hidden pt-6 pb-24 relative z-0 scroll-smooth"
       >
-        {/* We use a flex container that justifies to the end, pushing old messages up and out of view */}
         <div className="flex flex-col justify-end min-h-full gap-6">
           <AnimatePresence initial={false}>
             {messages.slice(-6).map((msg) => (
@@ -100,29 +105,32 @@ export function ChatMockup() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className={`max-w-[90%] rounded-sm ${msg.type === 'user' ? 'self-end bg-[var(--accent-pink)] text-white p-4 shadow-lg' : 'self-start glassmorphism p-4 border border-white/5'}`}
+                className={`max-w-[90%] rounded-2xl ${msg.type === 'user' ? 'self-end bg-accent-primary text-bg-primary p-4 shadow-lg shadow-accent-primary/20 rounded-br-sm' : 'self-start bg-bg-secondary/80 backdrop-blur-md p-5 border border-border-subtle rounded-bl-sm'}`}
               >
                 {msg.type === 'user' ? (
-                  <span className="font-mono text-sm leading-relaxed">{msg.text}</span>
+                  <span className="font-mono text-sm leading-relaxed font-semibold">{msg.text}</span>
                 ) : (
                   <>
-                    <div className="font-mono text-sm text-white/80 leading-relaxed mb-4">
+                    <div className="font-sans text-sm text-text-primary leading-relaxed mb-4">
                       {msg.text}
                     </div>
-                    <div className="bg-[#0F0F1A] border-l-2 border-[var(--accent-pink)] p-4 mb-4">
-                      <div className="font-mono text-xs text-white/50 mb-3 tracking-widest">TRANSACTION PLAN</div>
-                      <ul className="font-mono text-sm text-white/70 space-y-2">
+                    <div className="bg-bg-primary/80 rounded-xl border border-border-subtle p-4 mb-4 relative overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent-primary to-accent-secondary"></div>
+                      <div className="font-mono text-[10px] text-accent-secondary mb-3 tracking-widest uppercase flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-accent-secondary animate-pulse-slow"></div>
+                        Transaction Plan
+                      </div>
+                      <ul className="font-mono text-sm text-text-muted space-y-2">
                         {msg.plan.map((step: string, i: number) => (
-                          <motion.li key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.2 }}>
-                            Step {i + 1}: {step}
+                          <motion.li key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.15 }}>
+                            <span className="text-accent-primary opacity-70">[{i + 1}]</span> {step}
                           </motion.li>
                         ))}
                       </ul>
                     </div>
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" className={`text-white border-white/20 tech-button bg-transparent transition-all duration-300 ${msg.status === 'confirmed' ? 'bg-[var(--accent-pink)] border-[var(--accent-pink)]' : ''}`}>
-                        <span className="tech-corners-extra" />
-                        {msg.status === 'confirmed' ? 'Signed' : 'Confirm & Sign'}
+                      <Button variant="outline" size="sm" className={`font-mono text-xs tracking-wider transition-all duration-300 ${msg.status === 'confirmed' ? 'bg-success/20 text-success border-success/30' : 'bg-transparent text-text-primary border-border-subtle hover:bg-accent-primary/10 hover:text-accent-primary hover:border-accent-primary/30'}`}>
+                        {msg.status === 'confirmed' ? '✓ SIGNED' : 'CONFIRM & SIGN'}
                       </Button>
                     </div>
                   </>
@@ -133,14 +141,16 @@ export function ChatMockup() {
         </div>
       </div>
 
-      <div className="h-16 border-t border-white/10 bg-[#0F0F1A]/80 px-4 flex items-center z-10 absolute bottom-0 w-full">
-        <div className="flex-1 font-mono text-sm text-white/80 truncate pr-4">
-          {typedText}
-          <motion.span animate={{ opacity: [1, 0] }} transition={{ repeat: Infinity, duration: 0.8 }}>|</motion.span>
+      <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-bg-primary via-bg-primary/90 to-transparent">
+        <div className="h-14 border border-border-subtle bg-bg-secondary/90 backdrop-blur-xl rounded-xl px-4 flex items-center shadow-lg">
+          <div className="flex-1 font-mono text-sm text-text-primary truncate pr-4">
+            {typedText}
+            <motion.span className="text-accent-primary" animate={{ opacity: [1, 0] }} transition={{ repeat: Infinity, duration: 0.8 }}>|</motion.span>
+          </div>
+          <div className="w-8 h-8 rounded-lg bg-accent-primary/20 flex items-center justify-center text-accent-primary">
+            ↑
+          </div>
         </div>
-        <Button variant="outline" size="icon" className="text-[var(--accent-pink)] border-[var(--accent-pink)]/50 tech-button bg-transparent hover:bg-[var(--accent-pink)]/10">
-          <span className="tech-corners-extra" />↑
-        </Button>
       </div>
     </div>
   );

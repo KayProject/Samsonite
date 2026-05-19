@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import DarkVeil from '../DarkVeil';
 import { useRouter } from 'next/navigation';
 import { usePrivy } from '@privy-io/react-auth';
+import { Sparkles, ArrowRight, Network } from 'lucide-react';
 
 export function Hero() {
   const router = useRouter();
@@ -18,31 +19,35 @@ export function Hero() {
       login();
     }
   };
+
   return (
-    <section className="relative min-h-[95vh] w-full bg-[var(--bg-primary)] overflow-hidden flex flex-col justify-center">
+    <section className="relative min-h-[95vh] w-full bg-bg-primary overflow-hidden flex flex-col justify-center">
 
       {/* --- BACKGROUND LAYERS --- */}
 
       {/* 1. Dot Grid */}
-      <div className="absolute inset-0 bg-dot-grid opacity-80 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-dot-grid opacity-50 pointer-events-none z-0" />
 
-      {/* 2. DarkVeil Aurora */}
+      {/* 2. Deep Glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-primary/20 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-secondary/20 rounded-full blur-[120px] pointer-events-none z-0 mix-blend-screen" />
+
+      {/* 3. DarkVeil Aurora */}
       <div className="absolute bottom-0 left-0 w-full h-[70vh] pointer-events-none z-0">
-        {/* Fixed Mask: Transparent at the very top, fading to solid black (visible) for the rest of the height */}
         <div
           className="absolute inset-0"
           style={{
-            maskImage: 'linear-gradient(to bottom, transparent 0%, black 30%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 30%, black 100%)'
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)'
           }}
         >
           <DarkVeil
             hueShift={291}
-            noiseIntensity={0}
-            scanlineIntensity={0.25}
-            speed={0.7}
-            scanlineFrequency={0}
-            warpAmount={0.8}
+            noiseIntensity={0.05}
+            scanlineIntensity={0.3}
+            speed={0.5}
+            scanlineFrequency={0.02}
+            warpAmount={1.2}
           />
         </div>
       </div>
@@ -51,84 +56,88 @@ export function Hero() {
 
       <div className="relative z-10 px-6 pt-32 pb-24 text-center max-w-7xl mx-auto w-full flex flex-col items-center">
 
-        {/* 2D CSS Glowing Orb (Restored!) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative w-full h-[200px] sm:h-[250px] mb-12 flex items-center justify-center pointer-events-none"
-        >
-          {/* Core Agent Orb */}
-          <motion.div
-            animate={{
-              boxShadow: [
-                "0 0 40px 10px rgba(233, 30, 140, 0.3)",
-                "0 0 80px 20px rgba(106, 13, 173, 0.4)",
-                "0 0 40px 10px rgba(233, 30, 140, 0.3)"
-              ],
-              y: [-10, 10, -10]
-            }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-[var(--accent-pink)] to-[var(--accent-purple)] blur-[2px]"
-          />
-          {/* Outer subtle glow matching Stitch's wide background effect */}
-          <div className="absolute inset-0 bg-[var(--accent-glow)] rounded-[100%] blur-[120px] opacity-40 transform scale-150 -z-10" />
-        </motion.div>
-
         {/* Minimalist Proprietary Badge Aesthetic */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="mb-12 flex items-center justify-center gap-3 font-mono text-[10px] md:text-[11px] tracking-[0.2em] text-white/40 uppercase"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8 inline-flex items-center justify-center gap-3 font-mono text-xs md:text-sm tracking-[0.2em] text-accent-primary uppercase bg-bg-card/40 backdrop-blur-md px-6 py-2 rounded-full border border-accent-primary/20 shadow-[0_0_15px_rgba(245,158,11,0.1)]"
         >
-          <motion.div
-            animate={{ opacity: [1, 0] }}
-            transition={{ repeat: Infinity, duration: 0.8 }}
-            className="w-[2px] h-4 bg-[var(--accent-pink)]"
-          />
-          <span>·</span>
-          <span>Samsonite Protocol & Cross-Chain Agent Operating System</span>
+          <Sparkles className="w-4 h-4" />
+          <span>Samsonite v2.0 Protocol Active</span>
+          <Sparkles className="w-4 h-4" />
         </motion.div>
 
         {/* Typography */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-[2.5rem] sm:text-[5rem] md:text-[7rem] font-black leading-[0.9] tracking-tighter mb-8 uppercase text-white drop-shadow-xl"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
         >
-          One Message.<br />
-          Every Chain.
-        </motion.h1>
+          <h1 className="text-[3rem] sm:text-[6rem] md:text-[8rem] font-black leading-[0.9] tracking-tighter mb-6 uppercase text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/30 drop-shadow-2xl">
+            One Prompt. <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-primary via-yellow-300 to-accent-secondary">
+              Infinite Chains.
+            </span>
+          </h1>
+        </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-[1.1rem] sm:text-[1.25rem] text-white/70 max-w-[650px] mb-12 font-medium leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-lg sm:text-xl md:text-2xl text-text-muted max-w-[700px] mb-12 font-medium leading-relaxed"
         >
-          Deploy intent-based agents that bridge, swap, and stake across EVM and non-EVM ecosystems with a single natural language prompt.
+          Deploy intent-based AI agents that bridge, swap, and stake across EVM and non-EVM ecosystems instantly.
         </motion.p>
 
-        {/* CTAs with Tech Buttons */}
+        {/* CTAs with Premium Glassmorphism */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto mt-4 items-center justify-center"
         >
-          <div className="w-full sm:w-auto block">
-            <button onClick={() => handleAction('/chat')} className="w-full sm:w-auto px-10 py-4 bg-[var(--accent-pink)] text-white rounded-none font-bold text-[0.9rem] uppercase tracking-wider transition-transform hover:scale-[1.02] active:scale-[0.98] tech-button border border-transparent flex items-center justify-center">
-              <span className="tech-corners-extra" />
-              Start Chatting
-            </button>
+          <button 
+            onClick={() => handleAction('/chat')} 
+            className="group relative px-8 py-4 bg-accent-primary text-bg-primary rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:-translate-y-1 overflow-hidden w-full sm:w-auto flex items-center justify-center gap-2"
+          >
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            <span className="relative z-10 flex items-center gap-2">
+              Launch Agent <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </button>
+
+          <button 
+            onClick={() => handleAction('/build')} 
+            className="group relative px-8 py-4 bg-bg-card/50 backdrop-blur-xl border border-border-subtle text-text-primary rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:bg-bg-card hover:border-accent-primary/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2"
+          >
+            <Network className="w-5 h-5 group-hover:text-accent-secondary transition-colors" />
+            <span>Build Workflow</span>
+          </button>
+        </motion.div>
+
+        {/* Floating Data Nodes to replace the orb */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 1 }}
+          className="absolute hidden md:block top-1/4 right-[10%] w-32 h-32"
+        >
+          <div className="w-full h-full border border-accent-secondary/30 rounded-2xl rotate-12 animate-slow-bob backdrop-blur-sm bg-bg-card/20 flex items-center justify-center">
+            <span className="font-mono text-xs text-accent-secondary">EVM_SYNC</span>
           </div>
-          <div className="w-full sm:w-auto block">
-            <button onClick={() => handleAction('/build')} className="w-full sm:w-auto px-10 py-4 bg-[#0F0F1A]/50 backdrop-blur-md border border-[var(--border-subtle)] text-white hover:border-[var(--text-muted)] rounded-none font-bold text-[0.9rem] uppercase tracking-wider transition-transform hover:scale-[1.02] active:scale-[0.98] tech-button flex items-center justify-center">
-              <span className="tech-corners-extra" />
-              Build a Flow
-            </button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 1.2 }}
+          className="absolute hidden md:block bottom-1/4 left-[10%] w-24 h-24"
+        >
+          <div className="w-full h-full border border-accent-primary/30 rounded-full -rotate-12 animate-slow-bob [animation-delay:1s] backdrop-blur-sm bg-bg-card/20 flex items-center justify-center">
+            <span className="font-mono text-xs text-accent-primary">SOL_NODE</span>
           </div>
         </motion.div>
 

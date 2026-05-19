@@ -84,7 +84,7 @@ export function X402Banner() {
             {/* Glow around the code block */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#5684D1]/30 to-purple-500/30 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
 
-            <div className="relative rounded-xl overflow-hidden bg-[#0F0F1A] border border-[var(--border-subtle)] shadow-2xl">
+            <div className="relative rounded-xl overflow-hidden bg-[#0F172A] border border-[var(--border-subtle)] shadow-2xl">
               {/* Window Header */}
               <div className="flex items-center px-4 py-3 border-b border-[var(--border-subtle)] bg-black/40">
                 <div className="flex gap-2">

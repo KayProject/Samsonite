@@ -52,21 +52,21 @@ export function Sidebar({
   ]
 
   return (
-    <aside className="w-[260px] h-full bg-[#0F0F1A] border-r border-white/5 flex flex-col p-6 overflow-y-auto custom-scrollbar">
+    <aside className="w-[260px] h-full bg-[#0F172A] border-r border-white/5 flex flex-col p-6 overflow-y-auto custom-scrollbar">
       {/* Brand Header */}
       <div className="mb-8 mt-4 md:mt-0">
         <Link href="/">
           <h1 className="font-mono text-2xl font-black text-white tracking-tighter uppercase mb-6 flex items-center gap-2 hover:text-white/80 transition-colors">
             Samsonite
-            <span className="bg-[#E91E8C] text-white text-[8px] font-bold px-1.5 py-0.5 rounded-none">
+            <span className="bg-[#F59E0B] text-white text-[8px] font-bold px-1.5 py-0.5 rounded-none">
               V1.0
             </span>
           </h1>
         </Link>
 
         {/* Connected Wallet 1 — EVM (Privy) */}
-        <div className="bg-[#1A1A2E] p-3 flex items-center gap-3 border-l-2 border-[#E91E8C] mb-2">
-          <div className="w-8 h-8 bg-[#E91E8C] flex items-center justify-center shrink-0">
+        <div className="bg-[#1E293B] p-3 flex items-center gap-3 border-l-2 border-[#F59E0B] mb-2">
+          <div className="w-8 h-8 bg-[#F59E0B] flex items-center justify-center shrink-0">
             <WalletIcon className="w-4 h-4 text-white" />
           </div>
           <div className="min-w-0">
@@ -81,8 +81,8 @@ export function Sidebar({
         </div>
 
         {/* Connected Wallet 2 — Stellar (Multi-Wallet) */}
-        <div className="bg-[#1A1A2E] p-3 flex items-center gap-3 border-l-2 border-[#6A0DAD]">
-          <div className="w-8 h-8 bg-[#6A0DAD] flex items-center justify-center shrink-0">
+        <div className="bg-[#1E293B] p-3 flex items-center gap-3 border-l-2 border-[#8B5CF6]">
+          <div className="w-8 h-8 bg-[#8B5CF6] flex items-center justify-center shrink-0">
             <WalletIcon className="w-4 h-4 text-white" />
           </div>
           <div className="min-w-0 flex-1">
@@ -167,7 +167,7 @@ export function Sidebar({
                   className={`flex-1 py-2 font-mono text-[10px] font-bold uppercase transition-all
                     ${
                       executionMode === 'assisted'
-                        ? 'bg-[#E91E8C]/10 border border-[#E91E8C]/40 text-[#E91E8C]'
+                        ? 'bg-[#F59E0B]/10 border border-[#F59E0B]/40 text-[#F59E0B]'
                         : 'text-white/30'
                     }`}
                 >
@@ -178,7 +178,7 @@ export function Sidebar({
                   className={`flex-1 py-2 font-mono text-[10px] font-bold uppercase transition-all
                     ${
                       executionMode === 'autonomous'
-                        ? 'bg-[#E91E8C]/10 border border-[#E91E8C]/40 text-[#E91E8C]'
+                        ? 'bg-[#F59E0B]/10 border border-[#F59E0B]/40 text-[#F59E0B]'
                         : 'text-white/30'
                     }`}
                 >
@@ -199,7 +199,7 @@ export function Sidebar({
               <button
                 className={`w-full flex items-center gap-4 px-4 py-3 font-syne text-[13px] uppercase font-bold transition-all ${
                   isActive
-                    ? 'bg-[#E91E8C]/10 text-[#E91E8C] border-l-2 border-[#E91E8C]'
+                    ? 'bg-[#F59E0B]/10 text-[#F59E0B] border-l-2 border-[#F59E0B]'
                     : 'text-white/40 hover:text-white hover:bg-white/5 border-l-2 border-transparent'
                 }`}
               >
@@ -214,7 +214,7 @@ export function Sidebar({
       {/* Bottom Actions */}
       <div className="space-y-6">
         {activeMode === 'build' && (
-          <button className="w-full bg-[#E91E8C] text-white py-4 font-syne font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-[#E91E8C]/80 transition-colors">
+          <button className="w-full bg-[#F59E0B] text-white py-4 font-syne font-bold uppercase text-[11px] tracking-[0.2em] hover:bg-[#F59E0B]/80 transition-colors">
             Launch Agent
           </button>
         )}

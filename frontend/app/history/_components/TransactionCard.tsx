@@ -4,9 +4,9 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 
 export const TYPE_COLORS: Record<string, string> = {
-  FLOW: '#E91E8C',   // Flow executions
+  FLOW: '#F59E0B',   // Flow executions
   SWAP: '#8B5CF6',
-  BRIDGE: '#6A0DAD',
+  BRIDGE: '#8B5CF6',
   STAKE: '#22C55E',
   SEND: '#0EA5E9',
   TRANSFER: '#0EA5E9',
@@ -56,7 +56,7 @@ interface TransactionCardProps {
 }
 
 export function TransactionCard({ tx, index }: TransactionCardProps) {
-  const typeColor = TYPE_COLORS[tx.type] || '#E91E8C';
+  const typeColor = TYPE_COLORS[tx.type] || '#F59E0B';
   const statusColor = STATUS_COLORS[tx.status] || '#22C55E';
 
   // Format hash for display (0x1234...5678)
@@ -71,7 +71,7 @@ export function TransactionCard({ tx, index }: TransactionCardProps) {
       animate={{ opacity: 1, y: 0, transition: { delay: index * 0.05 } }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.3 }}
-      className="bg-[#12121A]/80 backdrop-blur-sm border border-white/5 border-l-2 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-[#1A1A2E] transition-colors"
+      className="bg-[#12121A]/80 backdrop-blur-sm border border-white/5 border-l-2 p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-[#1E293B] transition-colors"
       style={{ borderLeftColor: typeColor }}
     >
       {/* Left: type badge, date, title, networks */}

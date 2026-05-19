@@ -47,7 +47,7 @@ export function Chains() {
   ];
 
   return (
-    <section id="chains" className="py-24 border-y border-[var(--border-subtle)] bg-[#0F0F1A]/80 backdrop-blur-md relative z-10 overflow-hidden">
+    <section id="chains" className="py-24 border-y border-[var(--border-subtle)] bg-[#0F172A]/80 backdrop-blur-md relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
