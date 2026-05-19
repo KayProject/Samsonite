@@ -17,7 +17,7 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
 
   const stateStyles: Record<string, { border: string; bg: string; text: string }> = {
     thinking: { border: '#F59E0B', bg: 'rgba(233, 30, 140, 0.05)', text: '#FFF' },
-    executing: { border: '#8B5CF6', bg: 'rgba(106, 13, 173, 0.05)', text: '#FFF' },
+    executing: { border: '#F97316', bg: 'rgba(249, 115, 22, 0.05)', text: '#FFF' },
     awaiting_approval: { border: '#F59E0B', bg: 'rgba(245, 158, 11, 0.05)', text: '#F59E0B' },
     success: { border: '#22C55E', bg: 'rgba(34, 197, 94, 0.05)', text: '#22C55E' },
     error: { border: '#EF4444', bg: 'rgba(239, 68, 68, 0.05)', text: '#EF4444' },
@@ -43,7 +43,7 @@ export function StatusPanel({ status, message, step, totalSteps, txHash, chainId
         style={{ borderColor: style.border, backgroundColor: style.bg }}
       >
         {status === 'thinking' && <Loader2 size={14} className="animate-spin text-[#F59E0B]" />}
-        {status === 'executing' && <Loader2 size={14} className="animate-spin text-[#8B5CF6]" />}
+        {status === 'executing' && <Loader2 size={14} className="animate-spin text-[#F97316]" />}
         {status === 'awaiting_approval' && <ClockIcon className="w-4 h-4 text-[#F59E0B]" />}
         {status === 'success' && <CheckCircleIcon className="w-4 h-4 text-[#22C55E]" />}
         {status === 'error' && <XCircleIcon className="w-4 h-4 text-[#EF4444]" />}

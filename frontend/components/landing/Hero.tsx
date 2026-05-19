@@ -111,7 +111,7 @@ export function Hero() {
 
           <button 
             onClick={() => handleAction('/build')} 
-            className="group relative px-8 py-4 bg-bg-card/50 backdrop-blur-xl border border-border-subtle text-text-primary rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:bg-bg-card hover:border-accent-primary/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2"
+            className="group relative px-8 py-4 bg-bg-card/50 backdrop-blur-xl border border-border-subtle text-text-primary rounded-xl font-bold text-lg tracking-wide transition-all duration-300 hover:bg-bg-card hover:border-accent-primary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] hover:-translate-y-1 w-full sm:w-auto flex items-center justify-center gap-2"
           >
             <Network className="w-5 h-5 group-hover:text-accent-secondary transition-colors" />
             <span>Build Workflow</span>

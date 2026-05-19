@@ -18,7 +18,7 @@ export function PlanReview({ plan, onApprove, onCancel, isExecuting = false }: P
 
         <div className="space-y-4 mb-8">
           {plan.steps.map((step) => (
-            <div key={step.stepNumber} className="flex items-start gap-4 p-5 bg-[#0F172A] border border-white/5 rounded-none group hover:border-[#8B5CF6]/50 transition-all">
+            <div key={step.stepNumber} className="flex items-start gap-4 p-5 bg-[#0F172A] border border-white/5 rounded-none group hover:border-[#F97316]/50 transition-all">
               <span className="w-6 h-6 bg-[#F59E0B] text-white font-mono text-[10px] flex items-center justify-center shrink-0">
                 0{step.stepNumber}
               </span>

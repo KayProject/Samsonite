@@ -9,7 +9,7 @@ export default function NotFound() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0A0A12] text-white p-6 relative overflow-hidden font-mono">
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#F59E0B]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-[#8B5CF6]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] bg-[#F97316]/10 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Main Content */}
       <motion.div 

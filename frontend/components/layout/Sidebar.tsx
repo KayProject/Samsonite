@@ -81,8 +81,8 @@ export function Sidebar({
         </div>
 
         {/* Connected Wallet 2 — Stellar (Multi-Wallet) */}
-        <div className="bg-[#1E293B] p-3 flex items-center gap-3 border-l-2 border-[#8B5CF6]">
-          <div className="w-8 h-8 bg-[#8B5CF6] flex items-center justify-center shrink-0">
+        <div className="bg-[#1E293B] p-3 flex items-center gap-3 border-l-2 border-[#F97316]">
+          <div className="w-8 h-8 bg-[#F97316] flex items-center justify-center shrink-0">
             <WalletIcon className="w-4 h-4 text-white" />
           </div>
           <div className="min-w-0 flex-1">

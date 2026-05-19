@@ -42,7 +42,7 @@ export function FlowBuilderMockup() {
     const currentNodes = FLOWS[flowIdx];
 
     return (
-        <div className="bg-bg-card/40 backdrop-blur-2xl rounded-2xl relative overflow-hidden flex flex-col h-[600px] border border-border-subtle shadow-[0_0_40px_rgba(139,92,246,0.05)]">
+        <div className="bg-bg-card/40 backdrop-blur-2xl rounded-2xl relative overflow-hidden flex flex-col h-[600px] border border-border-subtle shadow-[0_0_40px_rgba(249,115,22,0.05)]">
             <div className="absolute inset-0 bg-gradient-to-t from-accent-secondary/5 to-transparent pointer-events-none" />
 
             <div className="h-14 border-b border-border-subtle flex items-center px-6 font-mono text-xs text-text-muted tracking-widest bg-bg-primary/50 backdrop-blur-md z-10 shadow-sm">

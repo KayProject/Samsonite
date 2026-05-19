@@ -254,7 +254,7 @@ function SettingsPageContent() {
                   {/* Stellar Wallet */}
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8 border border-white/5 bg-[#0A0A12] p-5">
                     <div>
-                      <div className="text-[9px] text-[#8B5CF6] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
+                      <div className="text-[9px] text-[#F97316] tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
                         <span className={`w-1.5 h-1.5 rounded-full ${stellarAddress ? 'bg-[#22C55E] animate-pulse' : 'bg-white/20'}`} />
                         Stellar Wallet — XLM · USDC
                       </div>
@@ -272,7 +272,7 @@ function SettingsPageContent() {
                     ) : (
                       <button
                         onClick={connectStellar}
-                        className="border border-[#8B5CF6]/40 bg-[#8B5CF6]/10 px-6 py-3 text-[9px] font-bold tracking-widest uppercase text-[#8B5CF6] hover:bg-[#8B5CF6]/20 transition-colors shrink-0"
+                        className="border border-[#F97316]/40 bg-[#F97316]/10 px-6 py-3 text-[9px] font-bold tracking-widest uppercase text-[#F97316] hover:bg-[#F97316]/20 transition-colors shrink-0"
                       >
                         Connect Stellar
                       </button>

@@ -80,8 +80,8 @@ export function Capabilities() {
           </div>
         </div>
 
-        {/* CARD 2: SWAP (Purple) */}
-        <div className="p-8 relative overflow-hidden group transition-all duration-500 rounded-3xl border border-border-subtle bg-bg-card/40 backdrop-blur-xl hover:bg-bg-card hover:border-accent-secondary/50 hover:shadow-[0_0_40px_rgba(139,92,246,0.1)]">
+        {/* CARD 2: SWAP (Orange) */}
+        <div className="p-8 relative overflow-hidden group transition-all duration-500 rounded-3xl border border-border-subtle bg-bg-card/40 backdrop-blur-xl hover:bg-bg-card hover:border-accent-secondary/50 hover:shadow-[0_0_40px_rgba(249,115,22,0.1)]">
           {/* Filled Heroicon Watermark */}
           <ArrowsRightLeftIcon
             className="absolute -bottom-8 -right-8 w-64 h-64 text-accent-secondary opacity-5 -rotate-12 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-10 pointer-events-none z-0"
@@ -116,7 +116,7 @@ export function Capabilities() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent-secondary text-sm bg-bg-card w-8 h-8 rounded-full flex items-center justify-center border border-accent-secondary/50 z-20 shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent-secondary text-sm bg-bg-card w-8 h-8 rounded-full flex items-center justify-center border border-accent-secondary/50 z-20 shadow-[0_0_15px_rgba(249,115,22,0.3)]"
               >
                 ↓
               </motion.div>

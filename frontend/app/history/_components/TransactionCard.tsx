@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 
 export const TYPE_COLORS: Record<string, string> = {
   FLOW: '#F59E0B',   // Flow executions
-  SWAP: '#8B5CF6',
-  BRIDGE: '#8B5CF6',
+  SWAP: '#F97316',
+  BRIDGE: '#F97316',
   STAKE: '#22C55E',
   SEND: '#0EA5E9',
   TRANSFER: '#0EA5E9',
